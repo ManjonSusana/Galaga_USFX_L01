@@ -1,5 +1,5 @@
-C:\Users\manjo\Desktop\Galaga_USFX_L01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Definitions.h
-C:\Users\manjo\Desktop\Galaga_USFX_L01\Source\Galaga_USFX_L01\Logros.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Definitions.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\Logros.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\CoreMinimal.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\CoreTypes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\HAL/Platform.h
@@ -501,4 +501,4 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MaterialMerging.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Level.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Actor.generated.h
-C:\Users\manjo\Desktop\Galaga_USFX_L01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\Logros.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\Logros.generated.h
