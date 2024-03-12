@@ -9,28 +9,15 @@ ANivel::ANivel()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	//static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
+	// Create the mesh component
+	mallaNivel = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_WideCapsule.Shape_WideCapsule'"));
+	//mallaNaveEnemigaMesh->SetStaticMesh(ShipMesh.Object);
+	mallaNivel->SetupAttachment(RootComponent);
+	RootComponent = mallaNivel;
+
 }
 
-ANivel::~ANivel()
-{
-	
-}
-
-ANivel::ANivel(int numeroNivel, int dificultad, int duracionNivel, int actualizarNivel, int iniciarNivel, int reiniciarNivel, int finalizarNivel, int pausarNivel, int reanudarNivel, FVector posicion, FRotator rotacion, FVector escala)
-{
-	this->numeroNivel = numeroNivel;
-	this->dificultad = dificultad;
-	this->duracionNivel = duracionNivel;
-	this->actualizarNivel = actualizarNivel;
-	this->iniciarNivel = iniciarNivel;
-	this->reiniciarNivel = reiniciarNivel;
-	this->finalizarNivel = finalizarNivel;
-	this->pausarNivel = pausarNivel;
-	this->reanudarNivel = reanudarNivel;
-	this->SetActorLocation(posicion);
-	this->SetActorRotation(rotacion);
-	this->SetActorScale3D(escala);
-}
 
 
 
@@ -58,18 +45,6 @@ int ANivel::getNumeroNivel()
 {
 	return numeroNivel;
 
-	return 0;
-}
-
-void ANivel::setDificultad(int _dificultad)
-{
-		this->dificultad = _dificultad;
-
-}
-
-int ANivel::getDificultad()
-{
-	return dificultad;
 	return 0;
 }
 

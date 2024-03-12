@@ -6,14 +6,14 @@
 #include "GameFramework/Actor.h"
 #include "NaveEnemiga.generated.h"
 
-UCLASS()
+UCLASS(abstract)
 class GALAGA_USFX_L01_API ANaveEnemiga : public AActor
 {
 	GENERATED_BODY()
 
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* mallaNaveEnemigaMesh;
+	UStaticMeshComponent* mallaNaveEnemiga;
 
 private:
 	float velocidad;      
@@ -77,5 +77,11 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+
+protected:  //creacion clase abstracta 
+	//virtual void Mover() = 0: 
+	virtual void Mover() PURE_VIRTUAL(ANaveEnemiga::Mover, );
+	virtual void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
 
 };

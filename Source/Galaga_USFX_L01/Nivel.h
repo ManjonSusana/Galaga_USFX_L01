@@ -6,14 +6,18 @@
 #include "GameFramework/Actor.h"
 #include "Nivel.generated.h"
 
-UCLASS()
+UCLASS(abstract)
 class GALAGA_USFX_L01_API ANivel : public AActor
 {
 	GENERATED_BODY()
 
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* mallaNivel;
+
+
 private:
 	int numeroNivel;
-	int dificultad;
 	int duracionNivel;
 	int actualizarNivel;
 	int iniciarNivel;
@@ -21,12 +25,10 @@ private:
 	int finalizarNivel;
 	int pausarNivel;
 	int reanudarNivel;
+
 public:
 	void setNumeroNivel(int numeroNivel);
 	int getNumeroNivel();
-
-	void setDificultad(int dificultad);
-	int getDificultad();
 
 	void setDuracionNivel(int duracionNivel);
 	int getDuracionNivel();
@@ -50,13 +52,7 @@ public:
 	int getReanudarNivel();
 
 	ANivel();
-	~ANivel();
-	ANivel(int numeroNivel, int dificultad, int duracionNivel, int actualizarNivel, int iniciarNivel, int reiniciarNivel, int finalizarNivel, int pausarNivel, int reanudarNivel);
-	ANivel(int numeroNivel, int dificultad, int duracionNivel, int actualizarNivel, int iniciarNivel, int reiniciarNivel, int finalizarNivel, int pausarNivel, int reanudarNivel, FVector posicion, FRotator rotacion, FVector escala);
-	ANivel(int numeroNivel, int dificultad, int duracionNivel, int actualizarNivel, int iniciarNivel, int reiniciarNivel, int finalizarNivel, int pausarNivel, int reanudarNivel, FVector posicion, FRotator rotacion, FVector escala, UStaticMeshComponent* mesh);
-	ANivel(int numeroNivel, int dificultad, int duracionNivel, int actualizarNivel, int iniciarNivel, int reiniciarNivel, int finalizarNivel, int pausarNivel, int reanudarNivel, FVector posicion, FRotator rotacion, FVector escala, UStaticMeshComponent* mesh, UMaterial* material);
-	ANivel(int numeroNivel, int dificultad, int duracionNivel, int actualizarNivel, int iniciarNivel, int reiniciarNivel, int finalizarNivel, int pausarNivel, int reanudarNivel, FVector posicion, FRotator rotacion, FVector escala, UStaticMeshComponent* mesh, UMaterial* material, UMaterial* material2);
-
+	
 	
 
 
@@ -67,5 +63,10 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+
+
+protected:  //CLASE ABSTRACTA
+	virtual void dificultad() PURE_VIRTUAL(ANivel::dificultad, );
 
 };
