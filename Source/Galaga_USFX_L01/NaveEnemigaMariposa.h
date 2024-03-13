@@ -34,7 +34,10 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 protected:
-		virtual void Mover();
-		virtual void Disparar();
+	virtual void Mover();
+	virtual void Disparar();
+	virtual void Atacar();
+	virtual void Escapar();
+
 
 };

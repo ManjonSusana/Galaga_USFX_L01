@@ -13,6 +13,12 @@ class ANaveEnemigaBicho;
 class ANaveEnemigaAbeja;
 class ANaveEnemigaMariposa;
 class ANaveEnemigaAbejaVenenosa;
+class ANaveEnemigaAbejaComun;
+class ANaveEnemigaBichoAndante;
+class ANaveEnemigaBichoVolador;
+class ANaveEnemigaTransporteTerrestre;
+class ANaveEnemigaTransporteAereo;
+class ANaveEnemigaCazaFlechas;
 
 UCLASS(MinimalAPI)
 class AGalaga_USFX_L01GameMode : public AGameModeBase
@@ -30,6 +36,13 @@ public:
 	ANaveEnemigaAbeja* NaveEnemigaAbeja01;
 	ANaveEnemigaMariposa* NaveEnemigaMariposa01;
 	ANaveEnemigaAbejaVenenosa* NaveEnemigaAbejaVenenosa01;
+	ANaveEnemigaAbejaComun* NaveEnemigaAbejaComun01;
+	ANaveEnemigaBichoAndante* NaveEnemigaBichoAndante01;
+	ANaveEnemigaBichoVolador* NaveEnemigaBichoVolador01;
+	ANaveEnemigaTransporteTerrestre* NaveEnemigaTransporteTerrestre01;
+	ANaveEnemigaTransporteAereo* NaveEnemigaTransporteAereo01;
+	ANaveEnemigaCazaFlechas* NaveEnemigaCazaFlechas01;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

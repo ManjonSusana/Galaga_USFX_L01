@@ -16,7 +16,7 @@ public:
 	UStaticMeshComponent* mallaNaveEnemiga;
 
 private:
-	float velocidad;      
+	float velocidad;
 	float resistencia;    //NUMERO DE DISPAROS QUE RECIBE
 	FString nombre;
 	float danoProducido;   //Potencia de cada proyectil de disparo de nave
@@ -27,39 +27,39 @@ private:
 	int tipoNave;
 	float experiencia;
 	float energia;
-	
 
 
 
-	
+
+
 public:
-	
+
 	FORCEINLINE float GetVelocidad() const { return velocidad; }
 	FORCEINLINE float GetResistencia() const { return resistencia; }
 	FORCEINLINE FString GetNombre() const { return nombre; }
 	FORCEINLINE float GetDanoProducido() const { return danoProducido; }
 	FORCEINLINE float GetTiempoDisparo() const { return tiempoDisparo; }
-	FORCEINLINE FVector GetPosicion() const { return posicion;  }
+	FORCEINLINE FVector GetPosicion() const { return posicion; }
 	FORCEINLINE int GetTrayectoria() const { return trayectoria; }
 	FORCEINLINE int GetCapacidadMunicion() const { return caoacidadMunicion; }
 	FORCEINLINE int GetTipoNave() const { return tipoNave; }
 	FORCEINLINE float GetExperiencia() const { return experiencia; }
 	FORCEINLINE float GetEnergia() const { return energia; }
-	
-	
+
+
 
 	FORCEINLINE void SetVelocidad(float _velocidad) { velocidad = _velocidad; }
 	FORCEINLINE void SetResistencia(float _resistencia) { resistencia = _resistencia; }
 	FORCEINLINE void SetNombre(FString _nombre) { nombre = _nombre; }
 	FORCEINLINE void SetDanoProducido(float _danoProducido) { danoProducido = _danoProducido; }
 	FORCEINLINE void SetTiempoDisparo(float _tiempoDisparo) { tiempoDisparo = _tiempoDisparo; }
-	FORCEINLINE void SetPosicion(FVector _posicion) { posicion = _posicion;  }
+	FORCEINLINE void SetPosicion(FVector _posicion) { posicion = _posicion; }
 	FORCEINLINE void SetTrayectoria(int _trayectoria) { trayectoria = _trayectoria; }
 	FORCEINLINE void SetCapacidadMunicion(int _caoacidadMunicion) { caoacidadMunicion = _caoacidadMunicion; }
 	FORCEINLINE void SetTipoNave(int _tipoNave) { tipoNave = _tipoNave; }
 	FORCEINLINE void SetExperiencia(float _experiencia) { experiencia = _experiencia; }
 	FORCEINLINE void SetEnergia(float _energia) { energia = _energia; }
-	
+
 
 
 
@@ -83,5 +83,6 @@ protected:  //creacion clase abstracta
 	//virtual void Mover() = 0: 
 	virtual void Mover() PURE_VIRTUAL(ANaveEnemiga::Mover, );
 	virtual void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
-
+	virtual void Atacar() PURE_VIRTUAL(ANaveEnemiga::Atacar, );
+	virtual void Escapar() PURE_VIRTUAL(ANaveEnemiga::Escapar, );
 };

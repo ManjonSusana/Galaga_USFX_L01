@@ -34,3 +34,11 @@ void ANaveEnemigaMariposa::Disparar()
 {
 }
 
+void ANaveEnemigaMariposa::Atacar()
+{
+}
+
+void ANaveEnemigaMariposa::Escapar()
+{
+}
+

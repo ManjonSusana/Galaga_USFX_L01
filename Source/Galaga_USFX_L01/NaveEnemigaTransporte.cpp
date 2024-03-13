@@ -19,3 +19,11 @@ void ANaveEnemigaTransporte::Mover()
 void ANaveEnemigaTransporte::Disparar()
 {
 }
+
+void ANaveEnemigaTransporte::Atacar()
+{
+}
+
+void ANaveEnemigaTransporte::Escapar()
+{
+}

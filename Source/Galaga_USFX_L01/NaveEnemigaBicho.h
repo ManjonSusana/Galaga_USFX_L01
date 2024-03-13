@@ -33,5 +33,7 @@ public:
 protected:
 	virtual void Mover();
 	virtual void Disparar();
+	virtual void Atacar();
+	virtual void Escapar();
 
 };

@@ -32,3 +32,10 @@ void ANaveEnemigaBicho::Disparar()
 {
 }
 
+void ANaveEnemigaBicho::Atacar()
+{
+}
+
+void ANaveEnemigaBicho::Escapar()
+{
+}

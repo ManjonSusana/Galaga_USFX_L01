@@ -18,3 +18,11 @@ void ANaveEnemigaCaza::Mover()
 void ANaveEnemigaCaza::Disparar()
 {
 }
+
+void ANaveEnemigaCaza::Atacar()
+{
+}
+
+void ANaveEnemigaCaza::Escapar()
+{
+}

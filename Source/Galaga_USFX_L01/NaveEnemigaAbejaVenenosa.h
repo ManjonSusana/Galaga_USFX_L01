@@ -15,12 +15,12 @@ class GALAGA_USFX_L01_API ANaveEnemigaAbejaVenenosa : public ANaveEnemigaAbeja
 	GENERATED_BODY()
 
 private:
-	int lanzaveneno;
+	int danioVeneno;
 
 public:
 	ANaveEnemigaAbejaVenenosa();
-	FORCEINLINE int GetLanzaVeneno() const { return lanzaveneno; }
-	FORCEINLINE void SetLanzaVeneno(int cantidad) { lanzaveneno = cantidad; }
+	FORCEINLINE int GetDanioVeneno() const { return danioVeneno; }
+	FORCEINLINE void SetDanioVeneno(int cantidad) { danioVeneno = cantidad; }
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -29,7 +29,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-
-
+protected:
+	virtual void Mover();
+	virtual void Disparar();
+	virtual void Atacar();
+	virtual void Escapar();
 
 };

@@ -35,3 +35,11 @@ void ANaveEnemigaAbeja::Disparar()
 {
 }
 
+void ANaveEnemigaAbeja::Atacar()
+{
+}
+
+void ANaveEnemigaAbeja::Escapar()
+{
+}
+
