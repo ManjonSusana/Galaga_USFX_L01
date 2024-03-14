@@ -37,8 +37,5 @@ protected:
 	virtual void Disparar();
 	virtual void Atacar();
 	virtual void Escapar();
-
-
-
 	
 };

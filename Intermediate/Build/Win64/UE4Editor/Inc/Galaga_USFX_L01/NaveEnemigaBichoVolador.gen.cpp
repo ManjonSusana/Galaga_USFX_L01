@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaBichoVolador() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigaBichoVolador_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "NaveEnemigaBichoVolador.h" },
 		{ "ModuleRelativePath", "NaveEnemigaBichoVolador.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaBichoVolador() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigaBichoVolador, 1767800689);
+	IMPLEMENT_CLASS(ANaveEnemigaBichoVolador, 2787214666);
 	template<> GALAGA_USFX_L01_API UClass* StaticClass<ANaveEnemigaBichoVolador>()
 	{
 		return ANaveEnemigaBichoVolador::StaticClass();

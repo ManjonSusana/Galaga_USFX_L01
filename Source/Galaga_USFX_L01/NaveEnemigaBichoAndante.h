@@ -6,9 +6,7 @@
 #include "NaveEnemigaBicho.h"
 #include "NaveEnemigaBichoAndante.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class GALAGA_USFX_L01_API ANaveEnemigaBichoAndante : public ANaveEnemigaBicho
 {
@@ -28,7 +26,7 @@ protected:
 
 public:
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	virtual void Tick(float DeltaTime)override;
 
 
 

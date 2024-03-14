@@ -40,7 +40,6 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaCazaFlechas() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANaveEnemigaCazaFlechas_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "NaveEnemigaCazaFlechas.h" },
 		{ "ModuleRelativePath", "NaveEnemigaCazaFlechas.h" },
 	};
@@ -72,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeNaveEnemigaCazaFlechas() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANaveEnemigaCazaFlechas, 553848959);
+	IMPLEMENT_CLASS(ANaveEnemigaCazaFlechas, 2198252556);
 	template<> GALAGA_USFX_L01_API UClass* StaticClass<ANaveEnemigaCazaFlechas>()
 	{
 		return ANaveEnemigaCazaFlechas::StaticClass();

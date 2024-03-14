@@ -21,7 +21,7 @@ void ANaveEnemigaBicho::BeginPlay()
 void ANaveEnemigaBicho::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	Mover(DeltaTime);
 }
 
 void ANaveEnemigaBicho::Mover()

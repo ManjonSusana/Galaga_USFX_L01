@@ -27,8 +27,11 @@ void ANaveEnemigaAbeja::Tick(float DeltaTime)
 
 }
 
-void ANaveEnemigaAbeja::Mover()
+
+
+void ANaveEnemigaAbeja::Mover(float DeltaTime)
 {
+    
 }
 
 void ANaveEnemigaAbeja::Disparar()
