@@ -5,11 +5,28 @@
 
 ANaveEnemigaCazaFlechas::ANaveEnemigaCazaFlechas()
 {
-//	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
-	//mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
+		static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cylinder.Shape_Cylinder'"));
+		mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
+}
+
+void ANaveEnemigaCazaFlechas::BeginPlay()
+{
+	Super::BeginPlay();
+	
+
+}
+
+void ANaveEnemigaCazaFlechas::Tick(float DeltaTime)
+{
+		Super::Tick(DeltaTime);
+	
 }
 
 
+
+void ANaveEnemigaCazaFlechas::Mover()
+{
+}
 
 void ANaveEnemigaCazaFlechas::Disparar()
 {

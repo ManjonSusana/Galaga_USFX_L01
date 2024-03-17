@@ -6,9 +6,6 @@
 #include "NaveEnemigaTransporte.h"
 #include "NaveEnemigaTransporteAereo.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class GALAGA_USFX_L01_API ANaveEnemigaTransporteAereo : public ANaveEnemigaTransporte
 {
@@ -23,6 +20,14 @@ public:
 
 	FORCEINLINE int GetCargamento() const { return cargamento; }
 	FORCEINLINE void SetCargamento(int _value) { cargamento = _value;}
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
 
 protected:
 	virtual void Mover();

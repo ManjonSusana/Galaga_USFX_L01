@@ -5,7 +5,7 @@
 
 ANaveEnemigaBichoAndante::ANaveEnemigaBichoAndante()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 
 }

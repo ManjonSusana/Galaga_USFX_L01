@@ -6,7 +6,7 @@
 // Sets default values
 ANaveEnemigaBicho::ANaveEnemigaBicho()
 {	
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 }
 
@@ -17,11 +17,10 @@ void ANaveEnemigaBicho::BeginPlay()
 	
 }
 
-// Called every frame
 void ANaveEnemigaBicho::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
+		Super::Tick(DeltaTime); 
+		
 }
 
 void ANaveEnemigaBicho::Mover()

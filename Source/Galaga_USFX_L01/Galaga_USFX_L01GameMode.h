@@ -19,6 +19,13 @@ class ANaveEnemigaBichoVolador;
 class ANaveEnemigaTransporteTerrestre;
 class ANaveEnemigaTransporteAereo;
 class ANaveEnemigaCazaFlechas;
+class ANaveEnemigaCazaDisparos;
+class ANaveEnemigaMariposaEspia;
+class ANaveEnemigaMariposaAsesina;
+
+/**
+ *
+ */
 
 UCLASS(MinimalAPI)
 class AGalaga_USFX_L01GameMode : public AGameModeBase
@@ -42,6 +49,10 @@ public:
 	ANaveEnemigaTransporteTerrestre* NaveEnemigaTransporteTerrestre01;
 	ANaveEnemigaTransporteAereo* NaveEnemigaTransporteAereo01;
 	ANaveEnemigaCazaFlechas* NaveEnemigaCazaFlechas01;
+	ANaveEnemigaCazaDisparos* NaveEnemigaCazaDisparos01;
+	ANaveEnemigaMariposaEspia* NaveEnemigaMariposaEspia01;
+	ANaveEnemigaMariposaAsesina* NaveEnemigaMariposaAsesina01;
+
 
 protected:
 	// Called when the game starts or when spawned

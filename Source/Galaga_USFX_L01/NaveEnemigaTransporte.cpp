@@ -5,10 +5,20 @@
 
 ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 
 
+}
+
+void ANaveEnemigaTransporte::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
+void ANaveEnemigaTransporte::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
 }
 
 void ANaveEnemigaTransporte::Mover()

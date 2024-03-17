@@ -30,9 +30,10 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
 protected:
 
-	virtual void Mover(float DeltaTime);
+	virtual void Mover();
 
 	virtual void Disparar();
 	virtual void Atacar();

@@ -6,9 +6,7 @@
 #include "NaveEnemiga.h"
 #include "NaveEnemigaCaza.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class GALAGA_USFX_L01_API ANaveEnemigaCaza : public ANaveEnemiga
 {
@@ -22,6 +20,15 @@ public:
 	ANaveEnemigaCaza();
 	FORCEINLINE int GetCantidadBombas() const { return cantidadBombas; }
 	FORCEINLINE void SetCantidadBombas(int cantidad) { cantidadBombas = cantidad; }
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
 protected:
 	virtual void Mover();
 	virtual void Disparar();

@@ -13,6 +13,11 @@
 #include "NaveEnemigaTransporteTerrestre.h"
 #include "NaveEnemigaTransporteAereo.h"
 #include "NaveEnemigaCazaFlechas.h"
+#include "NaveEnemigaCazaDisparos.h"
+#include "NaveEnemigaMariposaEspia.h" 
+#include "NaveEnemigaMariposaAsesina.h"
+
+
 AGalaga_USFX_L01GameMode::AGalaga_USFX_L01GameMode()
 {
 	// set default pawn class to our character class
@@ -38,6 +43,11 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 	FVector ubicacionNave10 = FVector(200.0f, -150.0f, 250.0f);
 	FVector ubicacionNave11 = FVector(100.0f, -150.0f, 250.0f);
 	FVector ubicacionNave12 = FVector(150.0f, -150.0f, 250.0f);
+	FVector ubicacionNave13 = FVector(100.0f, -150.0f, 250.0f);
+	FVector ubicacionNave14 = FVector(100.0f, -150.0f, 250.0f);
+	FVector ubicacionNave15 = FVector(100.0f, -150.0f, 250.0f);
+
+
 	
 	FRotator rotacionNave = FRotator(0.0f, 0.0f, 0.0f);
 	UWorld* const World = GetWorld();
@@ -57,6 +67,9 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 		NaveEnemigaTransporteTerrestre01 = World->SpawnActor<ANaveEnemigaTransporteTerrestre>(ubicacionNave10, rotacionNave);
 		NaveEnemigaTransporteAereo01 = World->SpawnActor<ANaveEnemigaTransporteAereo>(ubicacionNave11, rotacionNave);
 		NaveEnemigaCazaFlechas01 = World->SpawnActor<ANaveEnemigaCazaFlechas>(ubicacionNave12, rotacionNave);
+		NaveEnemigaCazaDisparos01 = World->SpawnActor<ANaveEnemigaCazaDisparos>(ubicacionNave13, rotacionNave);
+		NaveEnemigaMariposaEspia01 = World->SpawnActor<ANaveEnemigaMariposaEspia>(ubicacionNave14, rotacionNave);
+		NaveEnemigaMariposaAsesina01 = World->SpawnActor<ANaveEnemigaMariposaAsesina>(ubicacionNave15, rotacionNave);
 
 
 		NaveEnemigaCaza01->SetPosicion(FVector(-500.0f, 500.0f, 200.0f));
@@ -71,5 +84,8 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 		NaveEnemigaTransporteTerrestre01->SetPosicion(FVector(100.0f, -150.0f, 200.0f));
 		NaveEnemigaTransporteAereo01->SetPosicion(FVector(100.0f, -150.0f, 200.0f));
 		NaveEnemigaCazaFlechas01->SetPosicion(FVector(500.0f, -160.0f, 250.0f));
+		NaveEnemigaCazaDisparos01->SetPosicion(FVector(100.0f, -150.0f, 200.0f));
+		NaveEnemigaMariposaEspia01->SetPosicion(FVector(100.0f, -150.0f, 200.0f));
+		NaveEnemigaMariposaAsesina01->SetPosicion(FVector(100.0f, -150.0f, 200.0f));
 	}
 }

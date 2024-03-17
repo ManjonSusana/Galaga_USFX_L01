@@ -5,7 +5,7 @@
 
 ANaveEnemigaAbejaComun::ANaveEnemigaAbejaComun()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Pipe.Shape_Pipe'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 
 }
@@ -18,8 +18,9 @@ void ANaveEnemigaAbejaComun::BeginPlay()
 
 void ANaveEnemigaAbejaComun::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+		Super::Tick(DeltaTime);
 }
+
 
 void ANaveEnemigaAbejaComun::Mover()
 {

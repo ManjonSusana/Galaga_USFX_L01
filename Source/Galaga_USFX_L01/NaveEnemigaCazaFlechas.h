@@ -21,6 +21,15 @@ public:
 	FORCEINLINE void SetFlecha(int _flecha) { flecha = _flecha; }
 
 protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+
+protected:
 	virtual void Mover();
 	virtual void Disparar();
 	virtual void Atacar();
