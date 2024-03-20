@@ -15,8 +15,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* mallaNaveEnemiga;
 
-private:
-	float velocidad;
+protected:
+	
 	float resistencia;    //NUMERO DE DISPAROS QUE RECIBE
 	FString nombre;
 	float danoProducido;   //Potencia de cada proyectil de disparo de nave
@@ -28,6 +28,14 @@ private:
 	float experiencia;
 	float energia;
 
+	float LimiteInferiorX;
+
+	
+
+
+
+public:
+	float velocidad;
 
 
 
@@ -81,8 +89,8 @@ public:
 
 protected:  //creacion clase abstracta 
 	//virtual void Mover() = 0: 
-	virtual void Mover() PURE_VIRTUAL(ANaveEnemiga::Mover, );
-	virtual void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
-	virtual void Atacar() PURE_VIRTUAL(ANaveEnemiga::Atacar, );
-	virtual void Escapar() PURE_VIRTUAL(ANaveEnemiga::Escapar, );
+	void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Mover, );
+	void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
+	void Atacar() PURE_VIRTUAL(ANaveEnemiga::Atacar, );
+	void Escapar() PURE_VIRTUAL(ANaveEnemiga::Escapar, );
 };

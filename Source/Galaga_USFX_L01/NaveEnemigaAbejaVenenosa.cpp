@@ -18,7 +18,8 @@ void ANaveEnemigaAbejaVenenosa::Tick(float DeltaTime)
 		Super::Tick(DeltaTime);
 }
 
-void ANaveEnemigaAbejaVenenosa::Mover()
+
+void ANaveEnemigaAbejaVenenosa::Mover(float DeltaTime)
 {
 }
 

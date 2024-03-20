@@ -22,7 +22,7 @@ void ANaveEnemigaAbejaComun::Tick(float DeltaTime)
 }
 
 
-void ANaveEnemigaAbejaComun::Mover()
+void ANaveEnemigaAbejaComun::Mover(float DeltaTime)
 {
 }
 

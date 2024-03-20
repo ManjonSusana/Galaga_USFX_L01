@@ -25,12 +25,17 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+protected:
+	// Velocidad de la nave de caza
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float Velocidad = 500.0f;
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Disparar();
 	virtual void Atacar();
 	virtual void Escapar();

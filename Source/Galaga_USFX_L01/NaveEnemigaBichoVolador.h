@@ -24,13 +24,16 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+
+ 
+
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Disparar();
 	virtual void Atacar();
 	virtual void Escapar();

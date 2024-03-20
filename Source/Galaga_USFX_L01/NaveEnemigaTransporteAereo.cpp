@@ -19,7 +19,7 @@ void ANaveEnemigaTransporteAereo::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void ANaveEnemigaTransporteAereo::Mover()
+void ANaveEnemigaTransporteAereo::Mover(float DeltaTime)
 {
 }
 

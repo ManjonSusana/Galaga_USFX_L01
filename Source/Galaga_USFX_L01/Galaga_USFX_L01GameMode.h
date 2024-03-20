@@ -6,7 +6,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "Galaga_USFX_L01GameMode.generated.h"
 
-//class ANaveEnemiga;
+class ANaveEnemiga;
 class ANaveEnemigaTransporte;
 class ANaveEnemigaCaza;
 class ANaveEnemigaBicho;
@@ -36,7 +36,10 @@ public:
 	AGalaga_USFX_L01GameMode();
 
 public:
+
 	//ANaveEnemiga* NaveEnemiga01;
+
+	
 	ANaveEnemigaTransporte* NaveEnemigaTransporte01;
 	ANaveEnemigaCaza* NaveEnemigaCaza01;
 	ANaveEnemigaBicho* NaveEnemigaBicho01;
@@ -57,6 +60,28 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+public:
+	TArray<ANaveEnemiga*> TANavesEnemigas;
+	TArray<ANaveEnemigaCaza*> TANavesEnemigasCaza;
+	TArray<ANaveEnemigaTransporte*> TANavesEnemigasTransporte;
+	TArray<ANaveEnemigaBicho*> TANavesEnemigasBicho;
+	TArray<ANaveEnemigaAbeja*> TANavesEnemigasAbeja;
+	TArray<ANaveEnemigaMariposa*> TANavesEnemigasMariposa;
+public:
+	// CREACION DEL TMAP
+	TMap<int32, TArray<ANaveEnemigaCaza*>> ColumnaNavesEnemigasCaza;
+	TMap<int32, TArray<ANaveEnemigaTransporte*>> ColumnaNavesEnemigasTransporte;
+	TMap<int32, TArray<ANaveEnemigaBicho*>> ColumnaNavesEnemigasBicho;
+	TMap<int32, TArray<ANaveEnemigaAbeja*>> ColunmaNavesEnemigasAbeja;
+	TMap<int32, TArray<ANaveEnemigaMariposa*>> ColumnaNavesEnemigasMariposa;
+	
+private:
+	int TiempoTranscurrido;
+
+public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
 };
 
 

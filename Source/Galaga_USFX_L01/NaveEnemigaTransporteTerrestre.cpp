@@ -21,7 +21,7 @@ void ANaveEnemigaTransporteTerrestre::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void ANaveEnemigaTransporteTerrestre::Mover()
+void ANaveEnemigaTransporteTerrestre::Mover(float DeltaTime)
 {
 }
 

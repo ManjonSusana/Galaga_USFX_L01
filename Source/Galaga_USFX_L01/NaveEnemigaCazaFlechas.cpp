@@ -23,8 +23,7 @@ void ANaveEnemigaCazaFlechas::Tick(float DeltaTime)
 }
 
 
-
-void ANaveEnemigaCazaFlechas::Mover()
+void ANaveEnemigaCazaFlechas::Mover(float DeltaTime)
 {
 }
 

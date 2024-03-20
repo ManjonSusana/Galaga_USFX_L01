@@ -19,7 +19,7 @@ void ANaveEnemigaMariposaAsesina::Tick(float DeltaTime)
 		Super::Tick(DeltaTime);
 }
 
-void ANaveEnemigaMariposaAsesina::Mover()
+void ANaveEnemigaMariposaAsesina::Mover(float DeltaTime)
 {
 }
 

@@ -14,9 +14,8 @@ class GALAGA_USFX_L01_API ANaveEnemigaTransporte : public ANaveEnemiga
 private:
 	float capacidadCargaPeso;
 	float capacidadCargaVolumen;
-
-
 public:
+
 	ANaveEnemigaTransporte();
 	FORCEINLINE float GetCapacidadCargaPeso() const { return capacidadCargaPeso; }
 	FORCEINLINE float GetCapacidadCargaVolumen() const { return capacidadCargaVolumen; }
@@ -34,10 +33,8 @@ public:
 
 	
 protected:
-	virtual void Mover();
+	virtual void Mover(float DeltaTime);
 	virtual void Disparar();
 	virtual void Atacar();
 	virtual void Escapar();
-
-
 };

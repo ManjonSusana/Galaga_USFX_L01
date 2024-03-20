@@ -20,7 +20,8 @@ void ANaveEnemigaBichoAndante::Tick(float DeltaTime)
 		Super::Tick(DeltaTime);
 }
 
-void ANaveEnemigaBichoAndante::Mover()
+
+void ANaveEnemigaBichoAndante::Mover(float DeltaTime)
 {
 }
 

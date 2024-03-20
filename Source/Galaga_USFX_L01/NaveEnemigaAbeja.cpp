@@ -10,7 +10,7 @@ ANaveEnemigaAbeja::ANaveEnemigaAbeja()
 	//PrimaryActorTick.bCanEverTick = true;
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
-
+	velocidad = 300.0f;
 }
 
 // Called when the game starts or when spawned
@@ -24,12 +24,27 @@ void ANaveEnemigaAbeja::BeginPlay()
 void ANaveEnemigaAbeja::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	Mover(DeltaTime);
 
 }
 
 
-void ANaveEnemigaAbeja::Mover()
+void ANaveEnemigaAbeja::Mover(float DeltaTime)
 {
+	FVector PosicionActual = GetActorLocation();
+
+	float DesplazamientoX = velocidad * DeltaTime;
+
+	FVector NuevaPosicion = FVector(PosicionActual.X + DesplazamientoX * -1, PosicionActual.Y, PosicionActual.Z);
+
+	SetActorLocation(NuevaPosicion);
+
+
+	if (NuevaPosicion.X < LimiteInferiorX) {
+
+		SetActorLocation(FVector(300.0f, PosicionActual.Y, PosicionActual.Z));
+
+	}
 }
 
 void ANaveEnemigaAbeja::Disparar()
