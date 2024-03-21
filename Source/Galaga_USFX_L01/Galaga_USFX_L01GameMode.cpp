@@ -36,34 +36,28 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 	//Set the game state to playing
-	const int32 NumeroDeColumnasCaza = 1; // Número de columnas
-	const int32 NumeroDeFilasCaza = 5;    // Número de filas
+	//INICIALIZAR EL TMAP
+	//DIMENSIONES DE ARRAYS
+	const int32 NumeroDeColumnasCaza = 1; // N° COLUMNAS
+	const int32 NumeroDeFilasCaza = 5;    //  N° FILAS
 
-	// Generar naves enemigas caza y agregarlas al TMap en las columnas correspondientes
+	// CREANDO NAVES ENEMIGAS CAZA
 	for (int32 Columna = 0; Columna < NumeroDeColumnasCaza; ++Columna)
 	{
 		TArray<ANaveEnemigaCaza*> NavesEnColumna;
 		for (int32 Fila = 0; Fila < NumeroDeFilasCaza; ++Fila)
 		{
-			// Definir la ubicación y rotación de la nave enemiga
-			FVector SpawnLocation = FVector(Columna * 300 + 300.0f, Fila * 200 + 200.0f, 250.0f); // Ejemplo de ubicación de generación
-			FRotator SpawnRotation = FRotator::ZeroRotator; // Rotación inicial
+			// Ubicacion de la Nave
+			FVector SpawningLocation = FVector(Columna * 300 + 300.0f, Fila * 200 + 200.0f, 250.0f); // ubicacion actual
+			FRotator SpawningRotation = FRotator::ZeroRotator; // Rotación inicial
 
-			// Generar la nave enemiga caza y agregarla al TArray
-			ANaveEnemigaCaza* NuevaNaveCaza = GetWorld()->SpawnActor<ANaveEnemigaCaza>(SpawnLocation, SpawnRotation);
-			if (NuevaNaveCaza)
-			{
-				// Configurar la lógica de la nave enemiga caza si es necesario
-			}
-			else
-			{
-				// Ocurrió un error al crear la nave enemiga caza
-				UE_LOG(LogTemp, Error, TEXT("No se pudo crear la nave enemiga caza."));
-			}
+			//creacion de la nave enemiga caza y su adicion al Tmap inicializado en el GameMode.h
+			ANaveEnemigaCaza* NuevaNaveCaza = GetWorld()->SpawnActor<ANaveEnemigaCaza>(SpawningLocation, SpawningRotation);
+
 			NavesEnColumna.Add(NuevaNaveCaza);
 		}
 
-		// Agregar el TArray al TMap
+		// TArray completamente construido y añadadio al Tmap
 		ColumnaNavesEnemigasCaza.Add(Columna, NavesEnColumna);
 	}
 
@@ -77,25 +71,14 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 		TArray<ANaveEnemigaTransporte*> NavesEnColumna;
 		for (int32 Fila = 0; Fila < NumeroDeFilasTransporte; ++Fila)
 		{
-			// Definir la ubicación y rotación de la nave enemiga
-			FVector SpawnLocation = FVector(Columna * 300 + 600.0f, Fila * 200 + 200.0f, 250.0f); // Ejemplo de ubicación de generación
-			FRotator SpawnRotation = FRotator::ZeroRotator; // Rotación inicial
-			// Generar la nave enemiga transporte y agregarla al TArray
-			ANaveEnemigaTransporte* NuevaNaveTransporte = GetWorld()->SpawnActor<ANaveEnemigaTransporte>(SpawnLocation, SpawnRotation);
-			if (NuevaNaveTransporte)
-			{
-				// Configurar la lógica de la nave enemiga transporte si es necesario
-			}
-			else
-			{
-				// Ocurrió un error al crear la nave enemiga transporte
-				UE_LOG(LogTemp, Error, TEXT("No se pudo crear la nave enemiga transporte."));
-			}
+			
+			FVector SpawningLocation = FVector(Columna * 300 + 600.0f, Fila * 200 + 200.0f, 250.0f); 
+			FRotator SpawningRotation = FRotator::ZeroRotator; 
+			
+			ANaveEnemigaTransporte* NuevaNaveTransporte = GetWorld()->SpawnActor<ANaveEnemigaTransporte>(SpawningLocation, SpawningRotation);
 
 			NavesEnColumna.Add(NuevaNaveTransporte);
 		}
-
-		// Agregar el TArray al TMap
 		ColumnaNavesEnemigasTransporte.Add(Columna, NavesEnColumna);
 
 	}
@@ -109,25 +92,13 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 		TArray<ANaveEnemigaBicho*> NavesEnColumna;
 		for (int32 Fila = 0; Fila < NumeroDeFilasBicho; ++Fila)
 		{
-			// Definir la ubicación y rotación de la nave enemiga
-			FVector SpawnLocation = FVector(Columna * 300 + 900.0f, Fila * 200 + 200.0f, 250.0f); // Ejemplo de ubicación de generación
-			FRotator SpawnRotation = FRotator::ZeroRotator; // Rotación inicial
-			// Generar la nave enemiga transporte y agregarla al TArray
+			
+			FVector SpawnLocation = FVector(Columna * 300 + 900.0f, Fila * 200 + 200.0f, 250.0f); 
+			FRotator SpawnRotation = FRotator::ZeroRotator; 	
 			ANaveEnemigaBicho* NuevaNaveBicho = GetWorld()->SpawnActor<ANaveEnemigaBicho>(SpawnLocation, SpawnRotation);
-			if (NuevaNaveBicho)
-			{
-				// Configurar la lógica de la nave enemiga transporte si es necesario
-			}
-			else
-			{
-				// Ocurrió un error al crear la nave enemiga transporte
-				UE_LOG(LogTemp, Error, TEXT("No se pudo crear la nave enemiga BICHO."));
-			}
-
 			NavesEnColumna.Add(NuevaNaveBicho);
 		}
 
-		// Agregar el TArray al TMap
 		ColumnaNavesEnemigasBicho.Add(Columna, NavesEnColumna);
 	}
 
@@ -141,20 +112,10 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 			TArray<ANaveEnemigaAbeja*> NavesEnColumna;
 			for (int32 Fila = 0; Fila < NumeroDeFilasAbeja; ++Fila)
 			{
-				// Definir la ubicación y rotación de la nave enemiga
-				FVector SpawnLocation = FVector(Columna * 300 + 1200.0f, Fila * 200 + 200.0f, 250.0f); // Ejemplo de ubicación de generación
-				FRotator SpawnRotation = FRotator::ZeroRotator; // Rotación inicial
-				// Generar la nave enemiga transporte y agregarla al TArray
+				FVector SpawnLocation = FVector(Columna * 300 + 1200.0f, Fila * 200 + 200.0f, 250.0f); 
+				FRotator SpawnRotation = FRotator::ZeroRotator;
 				ANaveEnemigaAbeja* NuevaNaveAbeja = GetWorld()->SpawnActor<ANaveEnemigaAbeja>(SpawnLocation, SpawnRotation);
-				if (NuevaNaveAbeja)
-				{
-					// Configurar la lógica de la nave enemiga transporte si es necesario
-				}
-				else
-				{
-					// Ocurrió un error al crear la nave enemiga transporte
-					UE_LOG(LogTemp, Error, TEXT("No se pudo crear la nave enemiga BICHO."));
-				}
+	
 
 				NavesEnColumna.Add(NuevaNaveAbeja);
 			}
@@ -173,25 +134,14 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 			TArray<ANaveEnemigaMariposa*> NavesEnColumna;
 			for (int32 Fila = 0; Fila < NumeroDeFilasMariposa; ++Fila)
 			{
-				// Definir la ubicación y rotación de la nave enemiga
-				FVector SpawnLocation = FVector(Columna * 300 + 1500.0f, Fila * 200 + 200.0f, 250.0f); // Ejemplo de ubicación de generación
-				FRotator SpawnRotation = FRotator::ZeroRotator; // Rotación inicial
-				// Generar la nave enemiga transporte y agregarla al TArray
+				FVector SpawnLocation = FVector(Columna * 300 + 1500.0f, Fila * 200 + 200.0f, 250.0f); 
+				FRotator SpawnRotation = FRotator::ZeroRotator; 
+				
 				ANaveEnemigaMariposa* NuevaNaveMariposa = GetWorld()->SpawnActor<ANaveEnemigaMariposa>(SpawnLocation, SpawnRotation);
-				if (NuevaNaveMariposa)
-				{
-					// Configurar la lógica de la nave enemiga transporte si es necesario
-				}
-				else
-				{
-					// Ocurrió un error al crear la nave enemiga transporte
-					UE_LOG(LogTemp, Error, TEXT("No se pudo crear la nave enemiga BICHO."));
-				}
 
 				NavesEnColumna.Add(NuevaNaveMariposa);
 			}
 
-			// Agregar el TArray al TMap
 			ColumnaNavesEnemigasMariposa.Add(Columna, NavesEnColumna);
 		}
 	

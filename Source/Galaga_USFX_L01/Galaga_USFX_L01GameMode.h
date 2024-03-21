@@ -68,7 +68,7 @@ public:
 	TArray<ANaveEnemigaAbeja*> TANavesEnemigasAbeja;
 	TArray<ANaveEnemigaMariposa*> TANavesEnemigasMariposa;
 public:
-	// CREACION DEL TMAP
+	// CREACION Y INICIO DEL TMAP    //INT 32 SIMBOLIZA CUALQUIER ELEMENO DE 32 BITS
 	TMap<int32, TArray<ANaveEnemigaCaza*>> ColumnaNavesEnemigasCaza;
 	TMap<int32, TArray<ANaveEnemigaTransporte*>> ColumnaNavesEnemigasTransporte;
 	TMap<int32, TArray<ANaveEnemigaBicho*>> ColumnaNavesEnemigasBicho;
