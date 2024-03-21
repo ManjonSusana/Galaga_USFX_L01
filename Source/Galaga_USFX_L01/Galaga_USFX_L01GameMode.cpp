@@ -29,6 +29,29 @@ AGalaga_USFX_L01GameMode::AGalaga_USFX_L01GameMode() {
 void AGalaga_USFX_L01GameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	//tiempo de desaparicion de la nave Enemiga Caza
+	TiempoTranscurrido++;
+
+	if (TiempoTranscurrido == 5) {
+
+		// Supongamos que quieres eliminar todas las naves enemigas de la columna 0
+		int32 ColumnaSAEliminar = 1;
+		if (ColumnaNavesEnemigasCaza.Contains(ColumnaSAEliminar))
+		{
+			TArray<ANaveEnemigaCaza*>& NavesEnColumnaAEliminar = ColumnaNavesEnemigasCaza[ColumnaSAEliminar];
+			for (ANaveEnemigaCaza* Nave : NavesEnColumnaAEliminar)
+			{
+				// Destruir la nave enemiga
+				if (Nave)
+				{
+					Nave->Destroy();
+				}
+			}
+			// Limpiar el TArray después de destruir las naves enemigas
+			NavesEnColumnaAEliminar.Empty();
+		}
+	}
 	
 }
 
