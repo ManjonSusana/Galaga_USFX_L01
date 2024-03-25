@@ -6,12 +6,13 @@
 ANaveEnemigaCaza::ANaveEnemigaCaza()
 {
 	PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cylinder.Shape_Cylinder'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/MALLAS/269dafead173_nave_super_espacial.269dafead173_nave_super_espacial'"));
 	//// Create the mesh component
 	//mallaNaveEnemiga = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
+	GetActorRelativeScale3D();
+	SetActorScale3D(FVector(1.5f, 1.5f, 1.5f));
 
-	Velocidad = 300.0f;
 }
 
 void ANaveEnemigaCaza::BeginPlay()
@@ -23,28 +24,13 @@ void ANaveEnemigaCaza::BeginPlay()
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime); 
-	Mover (DeltaTime);
 }
 
 
 void ANaveEnemigaCaza::Mover(float DeltaTime)
 {
-	FVector PosicionActual = GetActorLocation();
-
-	float DesplazamientoX = Velocidad * DeltaTime;
-
-	FVector NuevaPosicion = FVector(PosicionActual.X + DesplazamientoX*  - 1, PosicionActual.Y, PosicionActual.Z);
-
-	SetActorLocation(NuevaPosicion);
-
-
-	if (NuevaPosicion.X < LimiteInferiorX) {
-
-		SetActorLocation(FVector(300.0f, PosicionActual.Y, PosicionActual.Z));
-
-	}
-	//SetActorLocation(FVector(GetActorLocation().X - Velocidad, GetActorLocation().Y, GetActorLocation().Z));
-
+	//velocidad = 300.0f;
+	//SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
 
 }
 

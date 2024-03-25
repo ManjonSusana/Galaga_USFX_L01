@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "ComponenteMovimiento.h"
 #include "NaveEnemiga.generated.h"
 
 UCLASS(abstract)
@@ -28,11 +29,9 @@ protected:
 	float experiencia;
 	float energia;
 
-	float LimiteInferiorX;
-
+	// Declaración del componente de movimiento de naves
+	UComponenteMovimiento* MovimientoNavesComponent;
 	
-
-
 
 public:
 	float velocidad;

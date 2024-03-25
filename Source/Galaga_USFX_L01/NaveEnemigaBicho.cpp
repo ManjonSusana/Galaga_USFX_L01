@@ -6,9 +6,12 @@
 // Sets default values
 ANaveEnemigaBicho::ANaveEnemigaBicho()
 {	
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/MALLAS/0e61880366e0_enemigos_del_juego_.0e61880366e0_enemigos_del_juego_'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
-	velocidad = 300.0f;
+	PrimaryActorTick.bCanEverTick = true;
+	GetActorRelativeScale3D();
+	SetActorScale3D(FVector(1.5f, 1.5f, 1.5f));
+
 }
 
 // Called when the game starts or when spawned
@@ -20,28 +23,13 @@ void ANaveEnemigaBicho::BeginPlay()
 
 void ANaveEnemigaBicho::Tick(float DeltaTime)
 {
-		Super::Tick(DeltaTime); 
-		Mover(DeltaTime);
-		
+	Super::Tick(DeltaTime); 
 }
 
 void ANaveEnemigaBicho::Mover(float DeltaTime)
 {
-	FVector PosicionActual = GetActorLocation();
-
-	float DesplazamientoX = velocidad * DeltaTime;
-
-	FVector NuevaPosicion = FVector(PosicionActual.X + DesplazamientoX * -1, PosicionActual.Y, PosicionActual.Z);
-
-	SetActorLocation(NuevaPosicion);
-
-
-	if (NuevaPosicion.X < LimiteInferiorX) {
-
-		SetActorLocation(FVector(300.0f, PosicionActual.Y, PosicionActual.Z));
-
-	}
-	//SetActorLocation(FVector(GetActorLocation().X - Velocidad, GetActorLocation().Y, GetActorLocation().Z));
+	//velocidad = 300.0f;
+	//SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
 }
 
 void ANaveEnemigaBicho::Disparar()

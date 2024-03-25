@@ -2,6 +2,8 @@ C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Wi
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaMariposaEspia.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaMariposa.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemiga.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\ComponenteMovimiento.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\ComponenteMovimiento.generated.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemiga.generated.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaMariposa.generated.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaMariposaEspia.generated.h

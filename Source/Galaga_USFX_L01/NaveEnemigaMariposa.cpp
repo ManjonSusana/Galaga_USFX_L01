@@ -6,9 +6,13 @@
 // Sets default values
 ANaveEnemigaMariposa::ANaveEnemigaMariposa()
 {
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Pipe.Shape_Pipe'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/MALLAS/0fcbbf768755_necesito_una_maripo.0fcbbf768755_necesito_una_maripo'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
-	velocidad = 300.0f;
+
+	PrimaryActorTick.bCanEverTick = true;
+	GetActorRelativeScale3D();
+	SetActorScale3D(FVector(1.5f, 1.5f, 1.5f));
+
 }
 
 // Called when the game starts or when spawned
@@ -22,26 +26,13 @@ void ANaveEnemigaMariposa::BeginPlay()
 void ANaveEnemigaMariposa::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
 
 }
 
 void ANaveEnemigaMariposa::Mover(float DeltaTime)
 {
-	FVector PosicionActual = GetActorLocation();
-
-	float DesplazamientoX = velocidad * DeltaTime;
-
-	FVector NuevaPosicion = FVector(PosicionActual.X + DesplazamientoX * -1, PosicionActual.Y, PosicionActual.Z);
-
-	SetActorLocation(NuevaPosicion);
-
-
-	if (NuevaPosicion.X < LimiteInferiorX) {
-
-		SetActorLocation(FVector(300.0f, PosicionActual.Y, PosicionActual.Z));
-
-	}
+	//velocidad = 300.0f; // ir cambiando velocidades
+	//SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
 }
 
 void ANaveEnemigaMariposa::Disparar()

@@ -16,8 +16,11 @@ ANaveEnemiga::ANaveEnemiga()
 	mallaNaveEnemiga->SetupAttachment(RootComponent);
 	RootComponent = mallaNaveEnemiga;
 	velocidad = 1;
+	// Inicializa el componente de movimiento de naves
+	MovimientoNavesComponent = CreateDefaultSubobject<UComponenteMovimiento>(TEXT("MovimientoNavesComponent"));
 
-	LimiteInferiorX = -1600.0f;
+	// Establece el componente de movimiento como tickeable
+	MovimientoNavesComponent->PrimaryComponentTick.bCanEverTick = true;
 
 }
 
@@ -32,6 +35,10 @@ void ANaveEnemiga::BeginPlay()
 void ANaveEnemiga::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+
+	// Llamar al método de tick del componente de movimiento
+	MovimientoNavesComponent->TickComponent(DeltaTime, ELevelTick::LEVELTICK_TimeOnly, nullptr);
 
 }
 

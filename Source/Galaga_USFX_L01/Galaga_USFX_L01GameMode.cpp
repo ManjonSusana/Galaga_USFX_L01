@@ -1,5 +1,6 @@
 #include "Galaga_USFX_L01GameMode.h"
 #include "Galaga_USFX_L01Pawn.h"
+#include "ComponenteMovimiento.h"
 #include "NaveEnemiga.h"
 #include "NaveEnemigaTransporte.h"
 #include "NaveEnemigaCaza.h"
@@ -32,7 +33,7 @@ void AGalaga_USFX_L01GameMode::Tick(float DeltaTime)
 
 	//tiempo de desaparicion de la nave Enemiga Caza
 	TiempoTranscurrido++;
-
+	/*
 	if (TiempoTranscurrido == 5) {
 
 		// Supongamos que quieres eliminar todas las naves enemigas de la columna 0
@@ -51,7 +52,7 @@ void AGalaga_USFX_L01GameMode::Tick(float DeltaTime)
 			// Limpiar el TArray después de destruir las naves enemigas
 			NavesEnColumnaAEliminar.Empty();
 		}
-	}
+	}*/
 	
 }
 
@@ -71,8 +72,8 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 		for (int32 Fila = 0; Fila < NumeroDeFilasCaza; ++Fila)
 		{
 			// Ubicacion de la Nave
-			FVector SpawningLocation = FVector(Columna * 300 + 300.0f, Fila * 200 + 200.0f, 250.0f); // ubicacion actual
-			FRotator SpawningRotation = FRotator::ZeroRotator; // Rotación inicial
+			FVector SpawningLocation = FVector(Columna * 300 + 300.0f, Fila * 200 - 400.0f, 250.0f); // ubicacion actual
+			FRotator SpawningRotation = FRotator( 0.0f, 90.0f, 0.0f);
 
 			//creacion de la nave enemiga caza y su adicion al Tmap inicializado en el GameMode.h
 			ANaveEnemigaCaza* NuevaNaveCaza = GetWorld()->SpawnActor<ANaveEnemigaCaza>(SpawningLocation, SpawningRotation);
@@ -95,8 +96,8 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 		for (int32 Fila = 0; Fila < NumeroDeFilasTransporte; ++Fila)
 		{
 			
-			FVector SpawningLocation = FVector(Columna * 300 + 600.0f, Fila * 200 + 200.0f, 250.0f); 
-			FRotator SpawningRotation = FRotator::ZeroRotator; 
+			FVector SpawningLocation = FVector(Columna * 300 + 600.0f, Fila * 200 - 400.0f, 250.0f); 
+			FRotator SpawningRotation = FRotator(0.0f, 180.0f, 0.0f);
 			
 			ANaveEnemigaTransporte* NuevaNaveTransporte = GetWorld()->SpawnActor<ANaveEnemigaTransporte>(SpawningLocation, SpawningRotation);
 
@@ -116,8 +117,8 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 		for (int32 Fila = 0; Fila < NumeroDeFilasBicho; ++Fila)
 		{
 			
-			FVector SpawnLocation = FVector(Columna * 300 + 900.0f, Fila * 200 + 200.0f, 250.0f); 
-			FRotator SpawnRotation = FRotator::ZeroRotator; 	
+			FVector SpawnLocation = FVector(Columna * 300 + 900.0f, Fila * 200 - 400.0f, 250.0f);
+			FRotator SpawnRotation = FRotator(0.0f, 180.0f, 0.0f);
 			ANaveEnemigaBicho* NuevaNaveBicho = GetWorld()->SpawnActor<ANaveEnemigaBicho>(SpawnLocation, SpawnRotation);
 			NavesEnColumna.Add(NuevaNaveBicho);
 		}
@@ -135,8 +136,8 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 			TArray<ANaveEnemigaAbeja*> NavesEnColumna;
 			for (int32 Fila = 0; Fila < NumeroDeFilasAbeja; ++Fila)
 			{
-				FVector SpawnLocation = FVector(Columna * 300 + 1200.0f, Fila * 200 + 200.0f, 250.0f); 
-				FRotator SpawnRotation = FRotator::ZeroRotator;
+				FVector SpawnLocation = FVector(Columna * 300 + 1200.0f, Fila * 200 - 400.0f, 250.0f);
+				FRotator SpawnRotation = FRotator(0.0f, 180.0f, 0.0f);
 				ANaveEnemigaAbeja* NuevaNaveAbeja = GetWorld()->SpawnActor<ANaveEnemigaAbeja>(SpawnLocation, SpawnRotation);
 	
 
@@ -157,8 +158,8 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 			TArray<ANaveEnemigaMariposa*> NavesEnColumna;
 			for (int32 Fila = 0; Fila < NumeroDeFilasMariposa; ++Fila)
 			{
-				FVector SpawnLocation = FVector(Columna * 300 + 1500.0f, Fila * 200 + 200.0f, 250.0f); 
-				FRotator SpawnRotation = FRotator::ZeroRotator; 
+				FVector SpawnLocation = FVector(Columna * 300 + 1500.0f, Fila * 200 - 400.0f, 250.0f);
+				FRotator SpawnRotation = FRotator(0.0f, 180.0f, 0.0f);
 				
 				ANaveEnemigaMariposa* NuevaNaveMariposa = GetWorld()->SpawnActor<ANaveEnemigaMariposa>(SpawnLocation, SpawnRotation);
 

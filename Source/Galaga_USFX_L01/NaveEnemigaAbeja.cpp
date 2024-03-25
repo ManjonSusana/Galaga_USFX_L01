@@ -8,9 +8,12 @@ ANaveEnemigaAbeja::ANaveEnemigaAbeja()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	//PrimaryActorTick.bCanEverTick = true;
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/MALLAS/c3bc960d8210_navee_enemiga_ABEJA.c3bc960d8210_navee_enemiga_ABEJA'"));
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
-	velocidad = 300.0f;
+	PrimaryActorTick.bCanEverTick = true;
+	GetActorRelativeScale3D();
+	SetActorScale3D(FVector(1.5f, 1.5f, 1.5f));
+
 }
 
 // Called when the game starts or when spawned
@@ -24,27 +27,14 @@ void ANaveEnemigaAbeja::BeginPlay()
 void ANaveEnemigaAbeja::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	Mover(DeltaTime);
 
 }
 
 
 void ANaveEnemigaAbeja::Mover(float DeltaTime)
 {
-	FVector PosicionActual = GetActorLocation();
-
-	float DesplazamientoX = velocidad * DeltaTime;
-
-	FVector NuevaPosicion = FVector(PosicionActual.X + DesplazamientoX * -1, PosicionActual.Y, PosicionActual.Z);
-
-	SetActorLocation(NuevaPosicion);
-
-
-	if (NuevaPosicion.X < LimiteInferiorX) {
-
-		SetActorLocation(FVector(300.0f, PosicionActual.Y, PosicionActual.Z));
-
-	}
+	//velocidad = 300.0f;
+	//SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
 }
 
 void ANaveEnemigaAbeja::Disparar()
