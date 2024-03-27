@@ -14,7 +14,7 @@ class GALAGA_USFX_L01_API ANaveEnemiga : public AActor
 
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
-	UStaticMeshComponent* mallaNaveEnemiga;
+	UStaticMeshComponent* mallaNaveEnemiga;   //malla 
 
 protected:
 	

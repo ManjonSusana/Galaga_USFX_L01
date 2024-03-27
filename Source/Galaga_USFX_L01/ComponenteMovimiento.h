@@ -18,16 +18,12 @@ public:
 
 	UPROPERTY()
 	float MovimientoComun;
-
-
 	float limInferiorX;
-	
 	float limDerecho;
 	float limIzquierdo;
 
-	bool bMovingRight; 
-
-
+	float ZigzagFrecuencia = 0.1f;
+	float ZigzagAmplitud = 100.0f;
 
 protected:
 	// Called when the game starts

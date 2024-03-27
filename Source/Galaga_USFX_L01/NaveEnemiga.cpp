@@ -16,6 +16,7 @@ ANaveEnemiga::ANaveEnemiga()
 	mallaNaveEnemiga->SetupAttachment(RootComponent);
 	RootComponent = mallaNaveEnemiga;
 	velocidad = 1;
+
 	// Inicializa el componente de movimiento de naves
 	MovimientoNavesComponent = CreateDefaultSubobject<UComponenteMovimiento>(TEXT("MovimientoNavesComponent"));
 

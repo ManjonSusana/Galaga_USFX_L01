@@ -12,11 +12,12 @@ UComponenteMovimiento::UComponenteMovimiento()
 
 	// ...
 
-	MovimientoComun = 8.0f;
+	MovimientoComun = 500.0f;   //DANDO VALOR AL MOVIMIENTO
 
 	limInferiorX = -1600.0f;
 	limDerecho = 1000.0f;
 	limIzquierdo = 1000.0f;
+
 }
 
 
@@ -29,32 +30,53 @@ void UComponenteMovimiento::BeginPlay()
 	
 }
 
-
+//Implementacion del movimiento
+// 
 // Called every frame
 void UComponenteMovimiento::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
-	AActor* Parent = GetOwner();
+	AActor* Parent = GetOwner();  //GetOwner es una funcion devuelve una referencia del objeto actor
 	if (Parent)
 	{
 		// Get the current location of the owner
 		FVector CurrentLocation = Parent->GetActorLocation();
 
-		float MovimientoComunX = MovimientoComun * DeltaTime;
+		float MovimientoX = FMath :: Sin(CurrentLocation.Y * ZigzagFrecuencia) * ZigzagAmplitud * DeltaTime;
+
+		// Calcular el movimiento en el eje Y
+		float MovimientoY = FMath::Cos(CurrentLocation.X * ZigzagFrecuencia) * ZigzagAmplitud * DeltaTime;
+
+		// Calcular la nueva posición
+		FVector NewLocation = FVector(CurrentLocation.X + MovimientoX, CurrentLocation.Y + MovimientoY, CurrentLocation.Z);
+
+		// Establecer la nueva posición
+		Parent->SetActorLocation(NewLocation);
+		
+
+		// Limite del mapa
+		if (NewLocation.X < limInferiorX)
+		{
+			Parent->SetActorLocation(FVector(-300.0f, CurrentLocation.Y, CurrentLocation.Z));
+		}
+		
+		//float MovimientoComunX = MovimientoComun * DeltaTime;
 
 		// Calculate the new position based on the movement speed
-		//FVector NewLocation = CurrentLocation + FVector(-MovimientoComun, 0.0f, 0.0f * DeltaTime);
-		FVector NewLocation = FVector(CurrentLocation.X - MovimientoComun, CurrentLocation.Y, CurrentLocation.Z);
-		// Set the new position
-		Parent->SetActorLocation(NewLocation);
 
+		//FVector NewLocation = FVector(CurrentLocation.X + MovimientoComun, CurrentLocation.Y, CurrentLocation.Z);
+		// Set the new position
+		//Parent->SetActorLocation(NewLocation);
+
+
+		/*
 		//Limite del mapa
 		if (NewLocation.X < limInferiorX)
 		{
 			Parent->SetActorLocation(FVector(1500.0f, CurrentLocation.Y, CurrentLocation.Z));
-		}
+		}*/
 	}
 }
 
