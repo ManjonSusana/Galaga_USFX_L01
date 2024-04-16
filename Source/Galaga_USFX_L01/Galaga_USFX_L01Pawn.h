@@ -3,9 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameFramework/PlayerInput.h"
+#include "Barrera.h"
+#include "ComponenteBarrera.h"
+#include "Components/StaticMeshComponent.h"
 #include "GameFramework/Character.h"
 #include "Galaga_USFX_L01Pawn.generated.h"
-
 UCLASS(Blueprintable)
 class AGalaga_USFX_L01Pawn : public APawn
 {
@@ -23,8 +26,6 @@ public:
 	FORCEINLINE void SetScore(int _score) { score = _score; }
 	FORCEINLINE void SetVida(float _vida) { vida = _vida; }
 
-	
-
 	/* The mesh component */
 	UPROPERTY(Category = Mesh, VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UStaticMeshComponent* ShipMeshComponent;
@@ -36,7 +37,6 @@ public:
 	/** Camera boom positioning the camera above the character */
 	UPROPERTY(Category = Camera, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
-
 
 
 public:
@@ -57,6 +57,13 @@ public:
 	/** Sound to play each time we fire */
 	UPROPERTY(Category = Audio, EditAnywhere, BlueprintReadWrite)
 	class USoundBase* FireSound;
+
+	void crearBarrera();
+	UPROPERTY(VisibleAnywhere)
+	UStaticMeshComponent* ComponenteBarrera;
+	ABarrera* barrera;
+
+
 
 	// Begin Actor Interface
 	virtual void Tick(float DeltaSeconds) override;
@@ -82,6 +89,8 @@ private:
 
 	/** Handle for efficient management of ShotTimerExpired timer */
 	FTimerHandle TimerHandle_ShotTimerExpired;
+
+	FTimerHandle DestruirBarrera;
 
 public:
 	/** Returns ShipMeshComponent subobject **/

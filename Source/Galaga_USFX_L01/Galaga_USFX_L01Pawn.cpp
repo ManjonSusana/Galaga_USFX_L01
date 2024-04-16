@@ -6,9 +6,11 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Camera/CameraComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Barrera.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Engine/CollisionProfile.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/StaticMesh.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
@@ -61,6 +63,44 @@ void AGalaga_USFX_L01Pawn::SetupPlayerInputComponent(class UInputComponent* Play
 	PlayerInputComponent->BindAxis(MoveRightBinding);
 	PlayerInputComponent->BindAxis(FireForwardBinding);
 	PlayerInputComponent->BindAxis(FireRightBinding);
+
+	//CON LA TECLA INICIAR LA BARRERA
+	FInputActionKeyMapping crearBarrera("crearBarrera", EKeys::K, 0, 0, 0,0);
+	UPlayerInput:: AddEngineDefinedActionMapping(crearBarrera);
+
+	PlayerInputComponent->BindAction("crearBarrera", IE_Pressed, this, &AGalaga_USFX_L01Pawn::crearBarrera);
+
+
+}
+
+void AGalaga_USFX_L01Pawn::crearBarrera()
+{
+	FVector Location = GetActorLocation() + FVector(200.0f, 0.0f, 0.0f);
+	FRotator Rotation = FRotator(0.0f, 0.0f, 0.0f);
+
+	UComponenteBarrera* crearBarrera = GetWorld()->SpawnActor<UComponenteBarrera>(UComponenteBarrera::StaticClass(), Location, Rotation);
+	if (crearBarrera != nullptr) {
+		crearBarrera->SetWorldLocation(Location);
+		crearBarrera->SetWorldRotation(Rotation);
+	}
+	ABarrera* crearBarreraSpawn = GetWorld()->SpawnActor<ABarrera>(ABarrera::StaticClass(), Location, Rotation);
+	if (crearBarreraSpawn != nullptr) {
+		crearBarreraSpawn->SetActorLocation(Location);
+		crearBarreraSpawn->SetActorRotation(Rotation);
+
+		//FTimerDelegate TimerDel;
+		//TimerDel.BindLambda([crearBarreraSpawn]()
+		//	{
+		//		if (crearBarrera && crearBarreraSpawn->IsValidLowLevel())
+		//		{
+		//			//crearBarrera->Destroy();
+
+		//		}
+		//	});
+
+		//GetWorld()->GetTimerManager().SetTimer(DestruirBarrera, TimerDel, 3.0f, false);
+
+	}
 }
 
 void AGalaga_USFX_L01Pawn::Tick(float DeltaSeconds)

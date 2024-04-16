@@ -13,21 +13,6 @@ UCLASS(config=Game)
 class AGalaga_USFX_L01Projectile : public AActor
 {
 	GENERATED_BODY()
-
-private:
-	int dano;
-	float velocidad;
-	float direccion;
-
-public:
-	FORCEINLINE int GetDano() const { return dano; }
-	FORCEINLINE float GetVelocidad() const { return velocidad; }
-	FORCEINLINE float GetDireccion() const { return direccion; }
-
-	FORCEINLINE void SetDano(int _dano) { dano = _dano; }
-	FORCEINLINE void SetVelocidad(float _velocidad) { velocidad = _velocidad; }
-	FORCEINLINE void SetDireccion(float _direccion) { direccion = _direccion; }
-
 	/** Sphere collision component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* ProjectileMesh;
@@ -35,6 +20,7 @@ public:
 	/** Projectile movement component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
+
 
 public:
 	AGalaga_USFX_L01Projectile();

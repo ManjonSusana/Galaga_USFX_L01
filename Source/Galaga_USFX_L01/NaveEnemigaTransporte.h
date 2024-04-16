@@ -23,6 +23,8 @@ public:
 	FORCEINLINE void SetCapacidadCargaPeso(float capacidad) { capacidadCargaPeso = capacidad; }
 	FORCEINLINE void SetCapacidadCargaVolumen(float capacidad) { capacidadCargaVolumen = capacidad; }
 
+	int TiempoTranscurrido; // Tiempo transcurrido para el disparo
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -37,4 +39,5 @@ protected:
 	virtual void Disparar();
 	virtual void Atacar();
 	virtual void Escapar();
+	virtual void Desplazamiento();
 };

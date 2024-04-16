@@ -74,7 +74,11 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AGalaga_USFX_L01Projectile)
 
 
-#define Galaga_USFX_LAB01_Source_Galaga_USFX_L01_Galaga_USFX_L01Projectile_h_15_PRIVATE_PROPERTY_OFFSET
+#define Galaga_USFX_LAB01_Source_Galaga_USFX_L01_Galaga_USFX_L01Projectile_h_15_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__ProjectileMesh() { return STRUCT_OFFSET(AGalaga_USFX_L01Projectile, ProjectileMesh); } \
+	FORCEINLINE static uint32 __PPO__ProjectileMovement() { return STRUCT_OFFSET(AGalaga_USFX_L01Projectile, ProjectileMovement); }
+
+
 #define Galaga_USFX_LAB01_Source_Galaga_USFX_L01_Galaga_USFX_L01Projectile_h_12_PROLOG
 #define Galaga_USFX_LAB01_Source_Galaga_USFX_L01_Galaga_USFX_L01Projectile_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

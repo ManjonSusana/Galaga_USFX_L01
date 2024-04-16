@@ -2,6 +2,10 @@
 
 
 #include "NaveEnemigaTransporte.h"
+#include "Galaga_USFX_L01Projectile.h"
+#include "Galaga_USFX_L01GameMode.h"
+#include "ProyectilEnemigo.h"
+#include "Kismet/GameplayStatics.h" 
 
 ANaveEnemigaTransporte::ANaveEnemigaTransporte()
 {
@@ -20,12 +24,34 @@ void ANaveEnemigaTransporte::BeginPlay()
 void ANaveEnemigaTransporte::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	Mover(DeltaTime);
+	//Disparar();
+	Desplazamiento();
+
+	TiempoTranscurrido++;
+	if (TiempoTranscurrido > 300) {
+		UWorld* const World = GetWorld();
+		if (World != nullptr)
+		{
+			FVector PosicionProyectilEnemigo = GetActorLocation() + FVector(0.0f, 0.0f, 0.0f);
+			World->SpawnActor <AProyectilEnemigo>(PosicionProyectilEnemigo, FRotator::ZeroRotator); //spawneo proyectil
+		}
+		TiempoTranscurrido = 0;
+
+	}
 }
 
 void ANaveEnemigaTransporte::Mover(float DeltaTime)
 {
-	//velocidad = 300.0f; // ir cambiando velocidades
-	//SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
+	velocidad = 0.65; //0.75
+	SetActorLocation(FVector(GetActorLocation().X - velocidad, GetActorLocation().Y, GetActorLocation().Z));
+
+	if (GetActorLocation().X < LimiteInferiorX)
+	{
+		Desplazamiento();
+		//SetActorLocation(FVector(GetActorLocation().X, GetActorLocation().Y, 250.0f));
+		SetActorLocation(FVector(16000.f, GetActorLocation().Y, 250.0f));
+	}
 }
 
 
@@ -38,5 +64,9 @@ void ANaveEnemigaTransporte::Atacar()
 }
 
 void ANaveEnemigaTransporte::Escapar()
+{
+}
+
+void ANaveEnemigaTransporte::Desplazamiento()
 {
 }
