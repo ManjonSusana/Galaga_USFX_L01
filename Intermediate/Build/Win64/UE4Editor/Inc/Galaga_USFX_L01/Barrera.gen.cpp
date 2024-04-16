@@ -68,8 +68,10 @@ void EmptyLinkFunctionForGeneratedCodeBarrera() {}
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABarrera_Statics::NewProp_colision_BARRERA_MetaData[] = {
 		{ "AllowPrivateAcces", "true" },
 		{ "Category", "Proyectile" },
+		{ "Comment", "//malla de la barrera\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Barrera.h" },
+		{ "ToolTip", "malla de la barrera" },
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABarrera_Statics::NewProp_colision_BARRERA = { "colision_BARRERA", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABarrera, colision_BARRERA), Z_Construct_UClass_UBoxComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABarrera_Statics::NewProp_colision_BARRERA_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABarrera_Statics::NewProp_colision_BARRERA_MetaData)) };
@@ -104,7 +106,7 @@ void EmptyLinkFunctionForGeneratedCodeBarrera() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABarrera, 1126654804);
+	IMPLEMENT_CLASS(ABarrera, 2002080203);
 	template<> GALAGA_USFX_L01_API UClass* StaticClass<ABarrera>()
 	{
 		return ABarrera::StaticClass();

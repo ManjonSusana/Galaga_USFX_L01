@@ -18,8 +18,8 @@ void UComponenteBarrera::CrearBarrerra()
 	UWorld* World = GetWorld();
 	if (World != nullptr) {
 
-		FTransform ComponentTransform (this->GetComponentTransform());
-		World -> SpawnActor<AActor>(BarreraToSpawn, ComponentTransform);
+		FTransform ComponentTransform (this->GetComponentTransform()); //Obtenemos la transformacion del componente
+		World -> SpawnActor<AActor>(BarreraToSpawn, ComponentTransform); //Creamos la barrera en la posicion del componente
 
 	}
 }

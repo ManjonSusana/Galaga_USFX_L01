@@ -45,9 +45,9 @@ void EmptyLinkFunctionForGeneratedCodeComponenteBarrera() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UComponenteBarrera_CrearBarrerra_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Barrera" },
-		{ "Comment", "//Funcion que se puede llamar desde blueprints para activar la barrera\n" },
+		{ "Comment", "//Constructor de la clase\n//Funcion que se puede llamar desde blueprints para activar la barrera\n" },
 		{ "ModuleRelativePath", "ComponenteBarrera.h" },
-		{ "ToolTip", "Funcion que se puede llamar desde blueprints para activar la barrera" },
+		{ "ToolTip", "Constructor de la clase\nFuncion que se puede llamar desde blueprints para activar la barrera" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UComponenteBarrera_CrearBarrerra_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UComponenteBarrera, nullptr, "CrearBarrerra", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UComponenteBarrera_CrearBarrerra_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UComponenteBarrera_CrearBarrerra_Statics::Function_MetaDataParams)) };
@@ -84,7 +84,7 @@ void EmptyLinkFunctionForGeneratedCodeComponenteBarrera() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Galaga_USFX_L01,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UComponenteBarrera_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UComponenteBarrera_CrearBarrerra, "CrearBarrerra" }, // 2409705279
+		{ &Z_Construct_UFunction_UComponenteBarrera_CrearBarrerra, "CrearBarrerra" }, // 3752067945
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UComponenteBarrera_Statics::Class_MetaDataParams[] = {
@@ -98,9 +98,9 @@ void EmptyLinkFunctionForGeneratedCodeComponenteBarrera() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UComponenteBarrera_Statics::NewProp_BarreraToSpawn_MetaData[] = {
 		{ "Category", "ComponenteBarrera" },
-		{ "Comment", "//Funcion que instancia una barrera en la posicion del componente\n//\n" },
+		{ "Comment", "//Funcion que instancia una barrera en la posicion del componente\n//Variable que se puede editar desde el editor de unreal\n" },
 		{ "ModuleRelativePath", "ComponenteBarrera.h" },
-		{ "ToolTip", "Funcion que instancia una barrera en la posicion del componente" },
+		{ "ToolTip", "Funcion que instancia una barrera en la posicion del componente\nVariable que se puede editar desde el editor de unreal" },
 	};
 #endif
 	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_UComponenteBarrera_Statics::NewProp_BarreraToSpawn = { "BarreraToSpawn", nullptr, (EPropertyFlags)0x0014000000000001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UComponenteBarrera, BarreraToSpawn), Z_Construct_UClass_AActor_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_UComponenteBarrera_Statics::NewProp_BarreraToSpawn_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UComponenteBarrera_Statics::NewProp_BarreraToSpawn_MetaData)) };
@@ -134,7 +134,7 @@ void EmptyLinkFunctionForGeneratedCodeComponenteBarrera() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UComponenteBarrera, 487981632);
+	IMPLEMENT_CLASS(UComponenteBarrera, 1844082004);
 	template<> GALAGA_USFX_L01_API UClass* StaticClass<UComponenteBarrera>()
 	{
 		return UComponenteBarrera::StaticClass();

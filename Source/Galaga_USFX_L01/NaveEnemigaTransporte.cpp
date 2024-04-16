@@ -27,7 +27,7 @@ void ANaveEnemigaTransporte::Tick(float DeltaTime)
 	Mover(DeltaTime);
 	//Disparar();
 	Desplazamiento();
-
+	//Realizar el disparo del proyectil
 	TiempoTranscurrido++;
 	if (TiempoTranscurrido > 300) {
 		UWorld* const World = GetWorld();

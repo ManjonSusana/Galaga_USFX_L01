@@ -12,17 +12,17 @@ class GALAGA_USFX_L01_API ABarrera : public AActor
 	GENERATED_BODY()
 public: 
 	UPROPERTY (VisibleAnywhere, BlueprintReadOnly, Category = Proyectile, meta=(AllowPrivateAcces= "true"))
-		UStaticMeshComponent* mallaBarrera;
+		UStaticMeshComponent* mallaBarrera; //malla de la barrera
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Proyectile, meta = (AllowPrivateAcces = "true"))
-		class UBoxComponent* colision_BARRERA;
-		virtual void DestruirBarrera();
+		class UBoxComponent* colision_BARRERA; //colision de la barrera
+		virtual void DestruirBarrera(); //destruir barrera
 private:
 	float resistencia;
 	FVector posicionInicial;
 	
 public:	
 	// Sets default values for this actor's properties
-	ABarrera();
+	ABarrera(); //constructor de la barrera
 
 protected:
 	// Called when the game starts or when spawned

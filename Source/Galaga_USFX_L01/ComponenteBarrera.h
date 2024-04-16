@@ -14,10 +14,10 @@ class GALAGA_USFX_L01_API UComponenteBarrera : public USceneComponent
 
 public:	
 	// Sets default values for this component's properties
-	UComponenteBarrera();
+	UComponenteBarrera(); //Constructor de la clase
 	UFUNCTION(BlueprintCallable, Category = "Barrera")  //Funcion que se puede llamar desde blueprints para activar la barrera
 		void CrearBarrerra(); //Funcion que instancia una barrera en la posicion del componente
-	UPROPERTY(EditAnywhere); //
+	UPROPERTY(EditAnywhere); //Variable que se puede editar desde el editor de unreal
 	TSubclassOf<AActor>BarreraToSpawn; //Variable que almacena el tipo de barrera que se va a instanciar
 
 
