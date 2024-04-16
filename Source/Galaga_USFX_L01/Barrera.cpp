@@ -5,10 +5,6 @@
 #include "Components/BoxComponent.h"
 #include "ProyectilEnemigo.h"
 
-void ABarrera::DestruirBarrera()
-{
-	Destroy();
-}
 // Sets default values
 ABarrera::ABarrera() 
 {
@@ -21,9 +17,9 @@ ABarrera::ABarrera()
 	RootComponent = mallaBarrera;
 	mallaBarrera->SetWorldScale3D(FVector(1.5f, 1.5f, 1.5f));
 	//COMPONENETE DE COLISION
-	colision_BARRERA = CreateDefaultSubobject<UBoxComponent>(TEXT("ColisionBarrera"));
-	colision_BARRERA->SetWorldScale3D(FVector(10.5f, 10.5f, 10.5f));
-	colision_BARRERA->SetupAttachment(RootComponent);
+	colision_BARRERA = CreateDefaultSubobject<UBoxComponent>(TEXT("ColisionBarrera")); //creamos la colision de la barrera
+	colision_BARRERA->SetWorldScale3D(FVector(10.5f, 10.5f, 10.5f)); //escala de la colision
+	colision_BARRERA->SetupAttachment(RootComponent); //la colision se adjunta a la raiz
 
 
 }
@@ -45,22 +41,36 @@ void ABarrera::Tick(float DeltaTime)
 void ABarrera::NotifyActorBeginOverlap(AActor* OtherActor) //cuando algo colisiona con la barrera
 {
 	Super::NotifyActorBeginOverlap(OtherActor);
-
 	// Verificar si el actor que colisiona es un proyectil enemigo
 	AProyectilEnemigo* ProyectilEnemigo = Cast<AProyectilEnemigo>(OtherActor);
 	if (ProyectilEnemigo)
 	{
 		// Destruir la barrera
-		Destroy();
+		//Destroy();
+
+		 // Reducir la salud de la barrera
+		resistencia -= ProyectilEnemigo->GetDano(); // Reduce la salud según el daño del proyectil enemigo
+
+		// Verificar si la salud de la barrera es menor o igual a cero
+		if (resistencia <= 0)
+		{
+			// Si la salud es menor o igual a cero, destruir la barrera
+			DestruirBarrera();
+		}
 	}
 	
+	
+}
+void ABarrera::DestruirBarrera()
+{
+	AProyectilEnemigo* Destroy(); 
 }
 
 void ABarrera::NotifyActorEndOverlap(AActor* OtherActor)
 {
 	Super::NotifyActorEndOverlap(OtherActor);
 
-	
+
 
 }
 

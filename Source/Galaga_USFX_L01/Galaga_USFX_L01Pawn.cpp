@@ -78,7 +78,8 @@ void AGalaga_USFX_L01Pawn::crearBarrera()
 	FVector Location = GetActorLocation() + FVector(200.0f, 0.0f, 0.0f);
 	FRotator Rotation = FRotator(0.0f, 0.0f, 0.0f);
 
-	UComponenteBarrera* crearBarrera = GetWorld()->SpawnActor<UComponenteBarrera>(UComponenteBarrera::StaticClass(), Location, Rotation);
+	//Creamos la barrera en la posicion del componente
+	UComponenteBarrera* crearBarrera = GetWorld()->SpawnActor<UComponenteBarrera>(UComponenteBarrera::StaticClass(), Location, Rotation); 
 	if (crearBarrera != nullptr) {
 		crearBarrera->SetWorldLocation(Location);
 		crearBarrera->SetWorldRotation(Rotation);
@@ -88,7 +89,7 @@ void AGalaga_USFX_L01Pawn::crearBarrera()
 		crearBarreraSpawn->SetActorLocation(Location);
 		crearBarreraSpawn->SetActorRotation(Rotation);
 
-		//FTimerDelegate TimerDel;
+		//FTimerDelegate TimerDel; //
 		//TimerDel.BindLambda([crearBarreraSpawn]()
 		//	{
 		//		if (crearBarrera && crearBarreraSpawn->IsValidLowLevel())
@@ -172,7 +173,7 @@ void AGalaga_USFX_L01Pawn::FireShot(FVector FireDirection)
 	}
 }
 
-void AGalaga_USFX_L01Pawn::ShotTimerExpired()
+void AGalaga_USFX_L01Pawn::ShotTimerExpired() 
 {
 	bCanFire = true;
 }

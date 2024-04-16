@@ -42,7 +42,7 @@ void ANaveEnemigaCaza::Tick(float DeltaTime)
 	Mover(DeltaTime);
 	//Disparar();
 	Desplazamiento();
-
+	//Disparos
 	TiempoTranscurrido++;
 	if (TiempoTranscurrido > 300) {
 		UWorld* const World = GetWorld();
