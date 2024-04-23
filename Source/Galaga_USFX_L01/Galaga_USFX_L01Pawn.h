@@ -60,8 +60,10 @@ public:
 
 	void crearBarrera();
 	UPROPERTY(VisibleAnywhere)
-	UStaticMeshComponent* ComponenteBarrera;
-	ABarrera* barrera;
+	UStaticMeshComponent* ComponenteBarrera; //Componente de la barrera
+	ABarrera* barrera; //Barrera
+	
+
 
 
 

@@ -17,6 +17,10 @@ void AProyectilEnemigo::Impacto()
 {
 }
 
+void AProyectilEnemigo::ProyectilEnemigo()
+{
+}
+
 // Sets default values
 AProyectilEnemigo::AProyectilEnemigo()
 {
@@ -24,9 +28,9 @@ AProyectilEnemigo::AProyectilEnemigo()
 	PrimaryActorTick.bCanEverTick = true;
 	// Static reference to the mesh to use for the projectile
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> ProjectileMeshAsset(TEXT("/Game/TwinStick/Meshes/TwinStickProjectile.TwinStickProjectile"));
-
-	ProyectilEnemyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ProjectileMesh0"));
-	ProyectilEnemyMesh->SetStaticMesh(ProjectileMeshAsset.Object);
+	//mallaBarrera->SetCollisionProfileName(UCollisionProfile::Pawn_ProfileName);
+	ProyectilEnemyMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ProjectileMesh0")); //CREA EL MESH
+	ProyectilEnemyMesh->SetStaticMesh(ProjectileMeshAsset.Object); //HACE REFERENCIA AL MESH
 	ProyectilEnemyMesh->SetupAttachment(RootComponent);
 
 	velocidad = 1000;

@@ -43,13 +43,14 @@ void ANaveEnemigaCaza::Tick(float DeltaTime)
 	//Disparar();
 	Desplazamiento();
 	//Disparos
+	
 	TiempoTranscurrido++;
 	if (TiempoTranscurrido > 300) {
 		UWorld* const World = GetWorld();
 		if (World != nullptr)
 		{
-			FVector PosicionProyectilEnemigo = GetActorLocation()+ FVector(0.0f, 0.0f, 0.0f);
-			World -> SpawnActor <AProyectilEnemigo>(PosicionProyectilEnemigo, FRotator::ZeroRotator); //spawneo proyectil
+			FVector PosicionProyectilEnemigo = GetActorLocation() + FVector(0.0f, 0.0f, 0.0f); //posicion del proyectil enemigo
+			World->SpawnActor <AProyectilEnemigo>(PosicionProyectilEnemigo, FRotator::ZeroRotator); //spawneo proyectil
 		}
 		TiempoTranscurrido = 0;
 
@@ -72,10 +73,10 @@ void ANaveEnemigaCaza::Mover(float DeltaTime)
 void ANaveEnemigaCaza::Disparar()
 {
 }
-void ANaveEnemigaCaza::ShotTimerExpired() //metodo para controlar el tiempo de disparo
+/*void ANaveEnemigaCaza::ShotTimerExpired() //metodo para controlar el tiempo de disparo
 {
 	bCanFire = true; //puede disparar
-}
+}*/
 void ANaveEnemigaCaza::Desplazamiento()
 { 
 	AmplitudZigZag = 3.0f; //amplitud del movimiento zigzag

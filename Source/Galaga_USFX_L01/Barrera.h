@@ -17,7 +17,7 @@ public:
 		class UBoxComponent* colision_BARRERA; //colision de la barrera
 		virtual void DestruirBarrera(); //destruir barrera
 private:
-	float resistencia = 10;
+	float resistencia = 20.0f;
 	FVector posicionInicial;
 	
 public:	
@@ -31,7 +31,9 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void NotifyActorBeginOverlap(AActor* OtherActor) override; //cuando se colisiona con algo
-	void NotifyActorEndOverlap(AActor* OtherActor) override; //cuando se deja de colisionar con algo
+	//void NotifyActorEndOverlap(AActor* OtherActor) override; //cuando se deja de colisionar con algo
+	//virtual void NotifyHit(class UPrimitiveComponent* MyComp, AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override; //cuando se colisiona con algo
+	virtual void NotifyHit(class UPrimitiveComponent* MyComp, AActor* Other, class UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit) override; //cuando se colisiona con algo
 
 };
+

@@ -20,7 +20,7 @@ ABarrera::ABarrera()
 	colision_BARRERA = CreateDefaultSubobject<UBoxComponent>(TEXT("ColisionBarrera")); //creamos la colision de la barrera
 	colision_BARRERA->SetWorldScale3D(FVector(10.5f, 10.5f, 10.5f)); //escala de la colision
 	colision_BARRERA->SetupAttachment(RootComponent); //la colision se adjunta a la raiz
-
+	
 
 }
 
@@ -28,6 +28,8 @@ ABarrera::ABarrera()
 void ABarrera::BeginPlay()
 {
 	Super::BeginPlay();
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Barrera Creada")); //mensaje de depuracion
 	
 }
 
@@ -38,11 +40,10 @@ void ABarrera::Tick(float DeltaTime)
 
 }
 
-void ABarrera::NotifyActorBeginOverlap(AActor* OtherActor) //cuando algo colisiona con la barrera
+
+void ABarrera::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
-	Super::NotifyActorBeginOverlap(OtherActor);
-	// Verificar si el actor que colisiona es un proyectil enemigo
-	AProyectilEnemigo* ProyectilEnemigo = Cast<AProyectilEnemigo>(OtherActor);
+	AProyectilEnemigo* ProyectilEnemigo = Cast<AProyectilEnemigo>(Other);
 	if (ProyectilEnemigo)
 	{
 		// Destruir la barrera
@@ -50,28 +51,18 @@ void ABarrera::NotifyActorBeginOverlap(AActor* OtherActor) //cuando algo colisio
 
 		 // Reducir la salud de la barrera
 		resistencia -= ProyectilEnemigo->GetDano(); // Reduce la salud según el daño del proyectil enemigo
-
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Black, TEXT("Barrera Creada")); //mensaje de depuracion
 		// Verificar si la salud de la barrera es menor o igual a cero
 		if (resistencia <= 0)
 		{
 			// Si la salud es menor o igual a cero, destruir la barrera
 			DestruirBarrera();
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Barrera Creada")); //mensaje de depuracion
 		}
 	}
-	
-	
 }
 void ABarrera::DestruirBarrera()
 {
-	AProyectilEnemigo* Destroy(); 
+	Destroy();
 }
-
-void ABarrera::NotifyActorEndOverlap(AActor* OtherActor)
-{
-	Super::NotifyActorEndOverlap(OtherActor);
-
-
-
-}
-
 

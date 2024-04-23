@@ -29,9 +29,11 @@ public:
 
 	void MovimientoProyectil();  //Metodo para mover el proyectil enemigo
 	void Impacto();			  //Metodo para detectar el impacto del proyectil enemigo
+	void ProyectilEnemigo();	  //Constructor de la clase
 public:	
 	// Sets default values for this actor's properties
-	AProyectilEnemigo();
+	AProyectilEnemigo(); //Constructor de la clase
+
 
 
 protected:

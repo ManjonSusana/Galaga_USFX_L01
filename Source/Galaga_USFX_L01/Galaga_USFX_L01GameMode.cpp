@@ -3,6 +3,8 @@
 #include "NaveEnemiga.h"
 #include "NaveEnemigaTransporte.h"
 #include "NaveEnemigaCaza.h"
+#include "NaveEnemigaCazaFactory.h"
+#include "NaveEnemigaTransporteFactory.h"
 
 AGalaga_USFX_L01GameMode::AGalaga_USFX_L01GameMode() {
 
@@ -23,32 +25,31 @@ void AGalaga_USFX_L01GameMode::BeginPlay()
 {
 	Super::BeginPlay();
 	//Set the game state to playing
-	FVector ubicacionInicioNavesEnemigasCaza = FVector(1000.0f, -900.0f, 250.0f);
+	FVector ubicacionInicioNavesEnemigasCaza = FVector(1000.0f, -900.0f, 250.f);
 	FVector ubicacionInicioNavesEnemigasTransporte = FVector(1600.0f, -900.0f, 250.0f);
-	FRotator rotacionNavesEnemigasCaza = FRotator(0.0f, 90.0f, 0.0f);
-	FRotator rotacionNavesEnemigasTransporte = FRotator(0.0f, 180.0f, 0.0f);
+	//FRotator rotacionNavesEnemigasCaza = FRotator(0.0f, 90.0f, 0.0f);
+	//FRotator rotacionNavesEnemigasTransporte = FRotator(0.0f, 180.0f, 0.0f);
+	FRotator rotacionNave = FRotator(0.0f, 180.0f, 0.0f);
 
 	// CREANDO NAVES ENEMIGAS 
 	UWorld* const World = GetWorld();
 	if (World != nullptr)
 	{
-		for (int i = 0; i < 5; i++) {
-			FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasCaza.X, ubicacionInicioNavesEnemigasCaza.Y + i * 300, ubicacionInicioNavesEnemigasTransporte.Z);
-			ANaveEnemigaCaza* NaveEnemigaCazaTemporal = World->SpawnActor<ANaveEnemigaCaza>(PosicionNaveActual, rotacionNavesEnemigasCaza);
-
-			//TANavesEnemigasCaza.Push(NaveEnemigaCazaTemporal);
-			TANavesEnemigas.Push(NaveEnemigaCazaTemporal);
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 2; j++) {
+				FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasTransporte.X + j * 200, ubicacionInicioNavesEnemigasTransporte.Y + i * 300, ubicacionInicioNavesEnemigasTransporte.Z);
+				ANaveEnemiga* NuevaNaveCaza = ANaveEnemigaCazaFactory::CrearNave("Caza", World, PosicionNaveActual, FRotator::ZeroRotator);
+			}
 		}
 
 		float nuevaposicionX = ubicacionInicioNavesEnemigasTransporte.X - 300.0f;
 
-		for (int j = 0; j < 5; j++) {
+	
+		for (int j = 0; j < 6; j++) {
 			FVector PosicionNaveActual = FVector(nuevaposicionX, ubicacionInicioNavesEnemigasTransporte.Y + j * 300, ubicacionInicioNavesEnemigasTransporte.Z);
-			ANaveEnemigaTransporte* NaveEnemigaTransporteTemporal = World->SpawnActor<ANaveEnemigaTransporte>(PosicionNaveActual, rotacionNavesEnemigasTransporte);
+			ANaveEnemiga* NuevaNaveTransporte = ANaveEnemigaTransporteFactory::CrearNave("Transporte", World, PosicionNaveActual, FRotator::ZeroRotator);
 
-			//TANavesEnemigasTransporte.Push(NaveEnemigaTransporteTemporal);
-			TANavesEnemigas.Push(NaveEnemigaTransporteTemporal);
 		}
 	}
 
-}
+};

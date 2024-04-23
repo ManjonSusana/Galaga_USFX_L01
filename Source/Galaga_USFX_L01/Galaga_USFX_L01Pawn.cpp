@@ -75,7 +75,7 @@ void AGalaga_USFX_L01Pawn::SetupPlayerInputComponent(class UInputComponent* Play
 
 void AGalaga_USFX_L01Pawn::crearBarrera()
 {
-	FVector Location = GetActorLocation() + FVector(200.0f, 0.0f, 0.0f);
+	FVector Location = GetActorLocation() + FVector(250.0f, 0.0f, 0.0f);
 	FRotator Rotation = FRotator(0.0f, 0.0f, 0.0f);
 
 	//Creamos la barrera en la posicion del componente

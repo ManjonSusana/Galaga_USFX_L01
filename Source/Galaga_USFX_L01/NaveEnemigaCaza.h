@@ -48,13 +48,13 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	virtual void ShotTimerExpired(); // Metodo para controlar el tiempo de disparo
+	//virtual void ShotTimerExpired(); // Metodo para controlar el tiempo de disparo
 
 protected:
 	virtual void Mover(float DeltaTime);
 	virtual void Disparar(); // metodo para disparar
 	virtual void Escapar();
-	FTimerHandle TimerHandle_ShotTimerExpired;
-	virtual void Desplazamiento();	
+	FTimerHandle TimerHandle_ShotTimerExpired; // Timer para controlar el tiempo de disparo
+	virtual void Desplazamiento();	// Metodo para el desplazamiento de la nave
 
 };

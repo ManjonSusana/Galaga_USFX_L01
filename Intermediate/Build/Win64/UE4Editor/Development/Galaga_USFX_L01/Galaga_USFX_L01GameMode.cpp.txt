@@ -1,0 +1,35 @@
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Definitions.Galaga_USFX_L01.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\Galaga_USFX_L01GameMode.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\Galaga_USFX_L01GameMode.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\Galaga_USFX_L01Pawn.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/PlayerInput.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\GestureRecognizer.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Public\KeyState.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\PlayerInput.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\Barrera.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\Barrera.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\ComponenteBarrera.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\ComponenteBarrera.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\Galaga_USFX_L01Pawn.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemiga.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemiga.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaTransporte.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaTransporte.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaCaza.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaCaza.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaCazaFactory.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaFactory.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaFactory.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaCazaFactory.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaTransporteFactory.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaTransporteFactory.generated.h
