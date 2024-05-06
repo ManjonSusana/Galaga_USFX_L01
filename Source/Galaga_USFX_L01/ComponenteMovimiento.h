@@ -16,15 +16,15 @@ public:
 	// Sets default values for this component's properties
 	UComponenteMovimiento();
 
-	UPROPERTY()
-	float MovimientoComun;
-	float limInferiorX;
-	float limDerecho;
-	float limIzquierdo;
-
-	float ZigzagFrecuencia = 0.1f;
-	float ZigzagAmplitud = 100.0f;
-
+	UPROPERTY(EditAnywhere)
+	float velocidad;
+	UPROPERTY(EditAnywhere)
+	float limiteIzquierda;
+	UPROPERTY(EditAnywhere)
+	float limiteDerecha;
+	UPROPERTY(EditAnywhere)
+	bool verificacion;
+	
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;

@@ -3,26 +3,21 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameFramework/PlayerInput.h"
+#include "Barrera.h"
+#include "ComponenteBarrera.h"	
+#include "Components/StaticMeshComponent.h"
 #include "GameFramework/Character.h"
+#include "GameFramework/Character.h"
+#include "ComponenteInventario.h"
+#include "CapsulasMotor.h"
+#include "CapsulaArma.h"
 #include "Galaga_USFX_L01Pawn.generated.h"
 
 UCLASS(Blueprintable)
 class AGalaga_USFX_L01Pawn : public APawn
 {
 	GENERATED_BODY()
-
-private:
-	int score;
-	float vida;
-	
-
-public:
-	FORCEINLINE int GetScore() const { return score; }
-	FORCEINLINE float GetVida() const { return vida; }
-
-	FORCEINLINE void SetScore(int _score) { score = _score; }
-	FORCEINLINE void SetVida(float _vida) { vida = _vida; }
-
 	
 
 	/* The mesh component */
@@ -45,6 +40,7 @@ public:
 	/** Offset from the ships location to spawn projectiles */
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite )
 	FVector GunOffset;
+	FVector GunOffset2;
 	
 	/* How fast the weapon will fire */
 	UPROPERTY(Category = Gameplay, EditAnywhere, BlueprintReadWrite)
@@ -57,6 +53,12 @@ public:
 	/** Sound to play each time we fire */
 	UPROPERTY(Category = Audio, EditAnywhere, BlueprintReadWrite)
 	class USoundBase* FireSound;
+
+
+	void crearBarrera();
+	UPROPERTY(VisibleAnywhere)
+	UStaticMeshComponent* ComponenteBarrera; //Componente de la barrera
+	ABarrera* barrera; //Barrera
 
 	// Begin Actor Interface
 	virtual void Tick(float DeltaSeconds) override;
@@ -74,7 +76,28 @@ public:
 	static const FName MoveRightBinding;
 	static const FName FireForwardBinding;
 	static const FName FireRightBinding;
+public:
+	UPROPERTY()
+	UComponenteInventario* MiInventario;
+	UPROPERTY()
+	UComponenteInventario* MiInventarioArma;
 
+	UFUNCTION()
+	void DropItem();
+	UFUNCTION()
+	void DropItemArma();
+
+	UFUNCTION()
+	void TakeItem(ACapsulasMotor* InventarioItem);
+	UFUNCTION()
+	void TakeItemArma(ACapsulaArma* InventarioItemArma);
+
+	UFUNCTION()
+	virtual void NotifyHit(class UPrimitiveComponent* MyComp,
+		AActor* Other, class UPrimitiveComponent* OtherComp,bool
+		bSelfMoved, FVector HitLocation, FVector
+		HitNormal, FVector NormalImpulse, const FHitResult&
+		Hit) override;
 private:
 
 	/* Flag to control firing  */
@@ -82,6 +105,8 @@ private:
 
 	/** Handle for efficient management of ShotTimerExpired timer */
 	FTimerHandle TimerHandle_ShotTimerExpired;
+
+	FTimerHandle DestruirBarrera;
 
 public:
 	/** Returns ShipMeshComponent subobject **/
@@ -92,7 +117,7 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	//FORCEINLINE float GetVida() const { return vida; }
     
-	
+	virtual void Regresar();
 
 };
 

@@ -34,12 +34,17 @@ class AGalaga_USFX_L01GameMode : public AGameModeBase
 
 public:
 	AGalaga_USFX_L01GameMode();
-
+private:
+	class AVidaNave* VidaNave01;
+	class ADirectorNave* DirectorNave01;
+	class ASuperNave* SuperNave01;
+	class AMotorNave* MotorNave01;
+	class AArmaNave* ArmaNave01;
+	class ACapsulasMotor* CapsulasMotor01;
+	class ACapsulasArma* CapsulasArma01;
 public:
 
 	//ANaveEnemiga* NaveEnemiga01;
-
-	
 	ANaveEnemigaTransporte* NaveEnemigaTransporte01;
 	ANaveEnemigaCaza* NaveEnemigaCaza01;
 	ANaveEnemigaBicho* NaveEnemigaBicho01;

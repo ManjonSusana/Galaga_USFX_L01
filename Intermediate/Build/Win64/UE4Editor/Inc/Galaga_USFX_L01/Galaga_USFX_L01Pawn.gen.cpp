@@ -17,14 +17,271 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 	GALAGA_USFX_L01_API UClass* Z_Construct_UClass_AGalaga_USFX_L01Pawn();
 	ENGINE_API UClass* Z_Construct_UClass_APawn();
 	UPackage* Z_Construct_UPackage__Script_Galaga_USFX_L01();
+	ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
+	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
+	GALAGA_USFX_L01_API UClass* Z_Construct_UClass_ACapsulasMotor_NoRegister();
+	GALAGA_USFX_L01_API UClass* Z_Construct_UClass_ACapsulaArma_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
-	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
+	GALAGA_USFX_L01_API UClass* Z_Construct_UClass_UComponenteInventario_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AGalaga_USFX_L01Pawn::execNotifyHit)
+	{
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_MyComp);
+		P_GET_OBJECT(AActor,Z_Param_Other);
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp);
+		P_GET_UBOOL(Z_Param_bSelfMoved);
+		P_GET_STRUCT(FVector,Z_Param_HitLocation);
+		P_GET_STRUCT(FVector,Z_Param_HitNormal);
+		P_GET_STRUCT(FVector,Z_Param_NormalImpulse);
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_Hit);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->NotifyHit(Z_Param_MyComp,Z_Param_Other,Z_Param_OtherComp,Z_Param_bSelfMoved,Z_Param_HitLocation,Z_Param_HitNormal,Z_Param_NormalImpulse,Z_Param_Out_Hit);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AGalaga_USFX_L01Pawn::execTakeItemArma)
+	{
+		P_GET_OBJECT(ACapsulaArma,Z_Param_InventarioItemArma);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->TakeItemArma(Z_Param_InventarioItemArma);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AGalaga_USFX_L01Pawn::execTakeItem)
+	{
+		P_GET_OBJECT(ACapsulasMotor,Z_Param_InventarioItem);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->TakeItem(Z_Param_InventarioItem);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AGalaga_USFX_L01Pawn::execDropItemArma)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->DropItemArma();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AGalaga_USFX_L01Pawn::execDropItem)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->DropItem();
+		P_NATIVE_END;
+	}
 	void AGalaga_USFX_L01Pawn::StaticRegisterNativesAGalaga_USFX_L01Pawn()
 	{
+		UClass* Class = AGalaga_USFX_L01Pawn::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "DropItem", &AGalaga_USFX_L01Pawn::execDropItem },
+			{ "DropItemArma", &AGalaga_USFX_L01Pawn::execDropItemArma },
+			{ "NotifyHit", &AGalaga_USFX_L01Pawn::execNotifyHit },
+			{ "TakeItem", &AGalaga_USFX_L01Pawn::execTakeItem },
+			{ "TakeItemArma", &AGalaga_USFX_L01Pawn::execTakeItemArma },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItem_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItem_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Galaga_USFX_L01Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGalaga_USFX_L01Pawn, nullptr, "DropItem", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItem_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItem_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItem()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItem_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItemArma_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItemArma_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Galaga_USFX_L01Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItemArma_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGalaga_USFX_L01Pawn, nullptr, "DropItemArma", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItemArma_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItemArma_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItemArma()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItemArma_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics
+	{
+		struct Galaga_USFX_L01Pawn_eventNotifyHit_Parms
+		{
+			UPrimitiveComponent* MyComp;
+			AActor* Other;
+			UPrimitiveComponent* OtherComp;
+			bool bSelfMoved;
+			FVector HitLocation;
+			FVector HitNormal;
+			FVector NormalImpulse;
+			FHitResult Hit;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MyComp_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MyComp;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Other;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_OtherComp_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OtherComp;
+		static void NewProp_bSelfMoved_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bSelfMoved;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_HitLocation;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_HitNormal;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_NormalImpulse;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Hit_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_Hit;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_MyComp_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_MyComp = { "MyComp", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_L01Pawn_eventNotifyHit_Parms, MyComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_MyComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_MyComp_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_Other = { "Other", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_L01Pawn_eventNotifyHit_Parms, Other), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_OtherComp_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_OtherComp = { "OtherComp", nullptr, (EPropertyFlags)0x0010000000080080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_L01Pawn_eventNotifyHit_Parms, OtherComp), Z_Construct_UClass_UPrimitiveComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_OtherComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_OtherComp_MetaData)) };
+	void Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_bSelfMoved_SetBit(void* Obj)
+	{
+		((Galaga_USFX_L01Pawn_eventNotifyHit_Parms*)Obj)->bSelfMoved = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_bSelfMoved = { "bSelfMoved", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(Galaga_USFX_L01Pawn_eventNotifyHit_Parms), &Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_bSelfMoved_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_HitLocation = { "HitLocation", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_L01Pawn_eventNotifyHit_Parms, HitLocation), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_HitNormal = { "HitNormal", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_L01Pawn_eventNotifyHit_Parms, HitNormal), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_NormalImpulse = { "NormalImpulse", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_L01Pawn_eventNotifyHit_Parms, NormalImpulse), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_Hit_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_Hit = { "Hit", nullptr, (EPropertyFlags)0x0010008008000182, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_L01Pawn_eventNotifyHit_Parms, Hit), Z_Construct_UScriptStruct_FHitResult, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_Hit_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_Hit_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_MyComp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_Other,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_OtherComp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_bSelfMoved,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_HitLocation,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_HitNormal,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_NormalImpulse,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::NewProp_Hit,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Galaga_USFX_L01Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGalaga_USFX_L01Pawn, nullptr, "NotifyHit", nullptr, nullptr, sizeof(Galaga_USFX_L01Pawn_eventNotifyHit_Parms), Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00C20400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics
+	{
+		struct Galaga_USFX_L01Pawn_eventTakeItem_Parms
+		{
+			ACapsulasMotor* InventarioItem;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_InventarioItem;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::NewProp_InventarioItem = { "InventarioItem", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_L01Pawn_eventTakeItem_Parms, InventarioItem), Z_Construct_UClass_ACapsulasMotor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::NewProp_InventarioItem,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Galaga_USFX_L01Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGalaga_USFX_L01Pawn, nullptr, "TakeItem", nullptr, nullptr, sizeof(Galaga_USFX_L01Pawn_eventTakeItem_Parms), Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics
+	{
+		struct Galaga_USFX_L01Pawn_eventTakeItemArma_Parms
+		{
+			ACapsulaArma* InventarioItemArma;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_InventarioItemArma;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::NewProp_InventarioItemArma = { "InventarioItemArma", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Galaga_USFX_L01Pawn_eventTakeItemArma_Parms, InventarioItemArma), Z_Construct_UClass_ACapsulaArma_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::NewProp_InventarioItemArma,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Galaga_USFX_L01Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AGalaga_USFX_L01Pawn, nullptr, "TakeItemArma", nullptr, nullptr, sizeof(Galaga_USFX_L01Pawn_eventTakeItemArma_Parms), Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_AGalaga_USFX_L01Pawn_NoRegister()
 	{
@@ -33,6 +290,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 	struct Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -64,6 +322,18 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FireSound_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FireSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ComponenteBarrera_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ComponenteBarrera;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MiInventario_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MiInventario;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MiInventarioArma_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_MiInventarioArma;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -71,6 +341,13 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 	UObject* (*const Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_APawn,
 		(UObject* (*)())Z_Construct_UPackage__Script_Galaga_USFX_L01,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItem, "DropItem" }, // 1474267305
+		{ &Z_Construct_UFunction_AGalaga_USFX_L01Pawn_DropItemArma, "DropItemArma" }, // 664503826
+		{ &Z_Construct_UFunction_AGalaga_USFX_L01Pawn_NotifyHit, "NotifyHit" }, // 2820915263
+		{ &Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItem, "TakeItem" }, // 1924491910
+		{ &Z_Construct_UFunction_AGalaga_USFX_L01Pawn_TakeItemArma, "TakeItemArma" }, // 2376542607
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::Class_MetaDataParams[] = {
@@ -91,7 +368,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 		{ "ToolTip", "The mesh component" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ShipMeshComponent = { "ShipMeshComponent", nullptr, (EPropertyFlags)0x00100000000b001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, ShipMeshComponent), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ShipMeshComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ShipMeshComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ShipMeshComponent = { "ShipMeshComponent", nullptr, (EPropertyFlags)0x00400000000b001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, ShipMeshComponent), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ShipMeshComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ShipMeshComponent_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraComponent_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -102,7 +379,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 		{ "ToolTip", "The camera" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraComponent = { "CameraComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, CameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraComponent_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraComponent = { "CameraComponent", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, CameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraComponent_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraBoom_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -113,7 +390,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 		{ "ToolTip", "Camera boom positioning the camera above the character" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00100000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraBoom_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraBoom_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraBoom = { "CameraBoom", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, CameraBoom), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraBoom_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraBoom_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_GunOffset_MetaData[] = {
 		{ "Category", "Gameplay" },
@@ -150,6 +427,28 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_FireSound = { "FireSound", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, FireSound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_FireSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_FireSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ComponenteBarrera_MetaData[] = {
+		{ "Category", "Galaga_USFX_L01Pawn" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Galaga_USFX_L01Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ComponenteBarrera = { "ComponenteBarrera", nullptr, (EPropertyFlags)0x00100000000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, ComponenteBarrera), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ComponenteBarrera_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ComponenteBarrera_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventario_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Galaga_USFX_L01Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventario = { "MiInventario", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, MiInventario), Z_Construct_UClass_UComponenteInventario_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventario_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventario_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventarioArma_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Galaga_USFX_L01Pawn.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventarioArma = { "MiInventarioArma", nullptr, (EPropertyFlags)0x0010000000080008, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGalaga_USFX_L01Pawn, MiInventarioArma), Z_Construct_UClass_UComponenteInventario_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventarioArma_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventarioArma_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ShipMeshComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_CameraComponent,
@@ -158,6 +457,9 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_FireRate,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MoveSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_FireSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_ComponenteBarrera,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventario,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::NewProp_MiInventarioArma,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AGalaga_USFX_L01Pawn>::IsAbstract,
@@ -167,11 +469,11 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 		"Game",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_AGalaga_USFX_L01Pawn_Statics::PropPointers),
 		0,
 		0x008000A4u,
@@ -186,7 +488,7 @@ void EmptyLinkFunctionForGeneratedCodeGalaga_USFX_L01Pawn() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGalaga_USFX_L01Pawn, 1722232271);
+	IMPLEMENT_CLASS(AGalaga_USFX_L01Pawn, 2440208386);
 	template<> GALAGA_USFX_L01_API UClass* StaticClass<AGalaga_USFX_L01Pawn>()
 	{
 		return AGalaga_USFX_L01Pawn::StaticClass();

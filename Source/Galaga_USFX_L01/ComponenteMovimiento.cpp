@@ -12,12 +12,10 @@ UComponenteMovimiento::UComponenteMovimiento()
 
 	// ...
 
-	MovimientoComun = 500.0f;   //DANDO VALOR AL MOVIMIENTO
-
-	limInferiorX = -1600.0f;
-	limDerecho = 1000.0f;
-	limIzquierdo = 1000.0f;
-
+	velocidad = 300.0f;
+	limiteDerecha = 1800.0f;
+	limiteIzquierda = -1800.0f;
+	verificacion = true;
 }
 
 
@@ -38,45 +36,32 @@ void UComponenteMovimiento::TickComponent(float DeltaTime, ELevelTick TickType, 
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
-	AActor* Parent = GetOwner();  //GetOwner es una funcion devuelve una referencia del objeto actor
+	AActor* Parent = GetOwner(); // Obtener una referencia al objeto actor propietario
+
 	if (Parent)
 	{
-		// Get the current location of the owner
-		FVector CurrentLocation = Parent->GetActorLocation();
+		if (verificacion) 
+		{ 
+			auto nuevaPosisicon = Parent->GetActorLocation()+ FVector(0.0f, velocidad* DeltaTime, 0.0f ); // Obtener la posicion actual del actor
 
-		float MovimientoX = FMath :: Sin(CurrentLocation.Y * ZigzagFrecuencia) * ZigzagAmplitud * DeltaTime;
-
-		// Calcular el movimiento en el eje Y
-		float MovimientoY = FMath::Cos(CurrentLocation.X * ZigzagFrecuencia) * ZigzagAmplitud * DeltaTime;
-
-		// Calcular la nueva posición
-		FVector NewLocation = FVector(CurrentLocation.X + MovimientoX, CurrentLocation.Y + MovimientoY, CurrentLocation.Z);
-
-		// Establecer la nueva posición
-		Parent->SetActorLocation(NewLocation);
-		
-
-		// Limite del mapa
-		if (NewLocation.X < limInferiorX)
-		{
-			Parent->SetActorLocation(FVector(-300.0f, CurrentLocation.Y, CurrentLocation.Z));
+			Parent->SetActorLocation(nuevaPosisicon); // Establecer la nueva posicion del actor
 		}
-		
-		//float MovimientoComunX = MovimientoComun * DeltaTime;
-
-		// Calculate the new position based on the movement speed
-
-		//FVector NewLocation = FVector(CurrentLocation.X + MovimientoComun, CurrentLocation.Y, CurrentLocation.Z);
-		// Set the new position
-		//Parent->SetActorLocation(NewLocation);
-
-
-		/*
-		//Limite del mapa
-		if (NewLocation.X < limInferiorX)
+		else
 		{
-			Parent->SetActorLocation(FVector(1500.0f, CurrentLocation.Y, CurrentLocation.Z));
-		}*/
+			auto nuevaPosisicon = Parent->GetActorLocation() - FVector(0.0f, velocidad * DeltaTime, 0.0f); // Obtener la posicion actual del actor
+
+			Parent->SetActorLocation(nuevaPosisicon); // Establecer la nueva posicion del actor
+		}
+		if(Parent->GetActorLocation().Y >= limiteDerecha)
+		{
+			verificacion = false;
+		}
+		else if(Parent->GetActorLocation().Y <= limiteIzquierda)
+		{
+				verificacion = true;
+		}
+	
 	}
 }
+	
 

@@ -6,9 +6,11 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Camera/CameraComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Barrera.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Engine/CollisionProfile.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/StaticMesh.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
@@ -48,19 +50,58 @@ AGalaga_USFX_L01Pawn::AGalaga_USFX_L01Pawn()
 	MoveSpeed = 1000.0f;
 	// Weapon
 	GunOffset = FVector(90.f, 0.f, 0.f);
+	GunOffset2 = FVector(90.f, 90.f, 0.f);
 	FireRate = 0.1f;
 	bCanFire = true;
+
+	MiInventario = CreateDefaultSubobject<UComponenteInventario>("MiInventario");
+	MiInventarioArma = CreateDefaultSubobject<UComponenteInventario>("MiInventarioArma");
 }
 
 void AGalaga_USFX_L01Pawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	check(PlayerInputComponent);
 
+
 	// set up gameplay key bindings
 	PlayerInputComponent->BindAxis(MoveForwardBinding);
 	PlayerInputComponent->BindAxis(MoveRightBinding);
 	PlayerInputComponent->BindAxis(FireForwardBinding);
 	PlayerInputComponent->BindAxis(FireRightBinding);
+
+	//CON LA TECLA INICIAR LA BARRERA
+	FInputActionKeyMapping crearBarrera("crearBarrera", EKeys::K, 0, 0, 0, 0);
+	UPlayerInput::AddEngineDefinedActionMapping(crearBarrera);
+
+	PlayerInputComponent->BindAction("crearBarrera", IE_Pressed, this, &AGalaga_USFX_L01Pawn::crearBarrera);
+
+
+	//Asignar la funcion Regresar
+	FInputActionKeyMapping Regresar("Regresar", EKeys:: B, 0,0,0,0);
+	UPlayerInput::AddEngineDefinedActionMapping(Regresar);
+
+	PlayerInputComponent->BindAction("regresar", IE_Pressed, this, &AGalaga_USFX_L01Pawn::Regresar);
+
+
+}
+void AGalaga_USFX_L01Pawn::crearBarrera()
+{
+	FVector Location = GetActorLocation() + FVector(250.0f, 0.0f, -75.0f);
+	FRotator Rotation = FRotator(0.0f, 0.0f, 0.0f);
+
+	//Creamos la barrera en la posicion del componente
+	UComponenteBarrera* crearBarrera = GetWorld()->SpawnActor<UComponenteBarrera>(UComponenteBarrera::StaticClass(), Location, Rotation);
+	if (crearBarrera != nullptr) {
+		crearBarrera->SetWorldLocation(Location);
+		crearBarrera->SetWorldRotation(Rotation);
+	}
+	ABarrera* crearBarreraSpawn = GetWorld()->SpawnActor<ABarrera>(ABarrera::StaticClass(), Location, Rotation);
+	if (crearBarreraSpawn != nullptr) {
+		crearBarreraSpawn->SetActorLocation(Location);
+		crearBarreraSpawn->SetActorRotation(Rotation);
+
+
+	}
 }
 
 void AGalaga_USFX_L01Pawn::Tick(float DeltaSeconds)
@@ -74,6 +115,7 @@ void AGalaga_USFX_L01Pawn::Tick(float DeltaSeconds)
 
 	// Calculate  movement
 	const FVector Movement = MoveDirection * MoveSpeed * DeltaSeconds;
+
 
 	// If non-zero size, move this actor
 	if (Movement.SizeSquared() > 0.0f)
@@ -135,6 +177,72 @@ void AGalaga_USFX_L01Pawn::FireShot(FVector FireDirection)
 void AGalaga_USFX_L01Pawn::ShotTimerExpired()
 {
 	bCanFire = true;
+}
+
+void AGalaga_USFX_L01Pawn::DropItem()
+{
+	if (MiInventario->CurrentInventory.Num() == 0)
+	{
+		return;
+	}
+	ACapsulasMotor* Item = MiInventario->CurrentInventory.Last();
+	MiInventario->RemoverDeInventario(Item);
+	FVector ItemOrigin;
+	FVector ItemBounds;
+	Item->GetActorBounds(false, ItemOrigin, ItemBounds);
+	FTransform PutDownLocation = GetTransform() + FTransform(RootComponent->GetForwardVector() *ItemBounds.GetMax());
+	Item->PutDown(PutDownLocation);
+}
+
+void AGalaga_USFX_L01Pawn::DropItemArma()
+{
+	if (MiInventarioArma->CurrentInventoryArma.Num() == 0)
+	{
+		return;
+	}
+	ACapsulaArma* Item = MiInventarioArma->CurrentInventoryArma.Last();
+	MiInventarioArma->RemoverDeInventarioArma(Item);
+	FVector ItemOrigin;
+	FVector ItemBounds;
+	Item->GetActorBounds(false, ItemOrigin, ItemBounds);
+	FTransform PutDownLocation = GetTransform() + FTransform(RootComponent->GetForwardVector() * ItemBounds.GetMax());
+	Item->PutDown(PutDownLocation);
+}
+
+void AGalaga_USFX_L01Pawn::TakeItem(ACapsulasMotor* InventarioItem)
+{
+	InventarioItem->PickUp();
+	MiInventario->AgregarAlInventario(InventarioItem);
+	MoveSpeed = MoveSpeed* 2.0f;
+
+}
+
+void AGalaga_USFX_L01Pawn::TakeItemArma(ACapsulaArma* InventarioItemArma)
+{
+	InventarioItemArma->PickUp();
+	MiInventarioArma->AgregarAlInventarioArma(InventarioItemArma);
+	
+}
+
+
+void AGalaga_USFX_L01Pawn::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved, FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
+{
+	ACapsulasMotor* InventoryItem = Cast<ACapsulasMotor>(Other);
+	if (InventoryItem != nullptr)
+	{
+		TakeItem(InventoryItem);
+	}
+	if(ACapsulaArma* InventoryItemArma = Cast<ACapsulaArma>(Other))
+	{
+		TakeItemArma(InventoryItemArma);
+	}
+}
+
+void AGalaga_USFX_L01Pawn::Regresar()  ///realizar el movimeinto 
+{
+	//mandar un tipo de dato booleano para mandarlo al tick
+
+
 }
 
 

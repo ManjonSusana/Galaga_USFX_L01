@@ -15,11 +15,19 @@ class GALAGA_USFX_L01_API ANaveEnemigaCaza : public ANaveEnemiga
 private:
 	int cantidadBombas;
 
+	uint32 bCanFire : 1;// Variable para controlar el tiempo de disparo
+	float FireRate; // Velocidad de disparo
+
+	int TiempoTranscurrido;
 
 public:
 	ANaveEnemigaCaza();
 	FORCEINLINE int GetCantidadBombas() const { return cantidadBombas; }
 	FORCEINLINE void SetCantidadBombas(int cantidad) { cantidadBombas = cantidad; }
+
+	FORCEINLINE float Getvelocidad() const { return velocidad; }
+	FORCEINLINE void Setvelocidad(float _velocidad) { velocidad = _velocidad; }
+
 
 protected:
 	// Called when the game starts or when spawned
@@ -38,6 +46,7 @@ protected:
 	virtual void Mover(float DeltaTime);
 	virtual void Disparar();
 	virtual void Atacar();
+	FTimerHandle TimerHandle_ShotTimerExpired; // Timer para controlar el tiempo de disparo
 	virtual void Escapar();
 
 };

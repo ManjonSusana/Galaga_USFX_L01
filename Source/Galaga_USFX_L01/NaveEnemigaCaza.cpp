@@ -2,6 +2,10 @@
 
 
 #include "NaveEnemigaCaza.h"
+#include "Galaga_USFX_L01Projectile.h"
+#include "Galaga_USFX_L01GameMode.h"
+#include "ProyectilEnemigo.h"
+#include "Kismet/GameplayStatics.h" 
 
 ANaveEnemigaCaza::ANaveEnemigaCaza()
 {
@@ -12,6 +16,10 @@ ANaveEnemigaCaza::ANaveEnemigaCaza()
 	mallaNaveEnemiga->SetStaticMesh(ShipMesh.Object);
 	GetActorRelativeScale3D();
 	SetActorScale3D(FVector(1.5f, 1.5f, 1.5f));
+
+	bCanFire = false;//puede disparar
+
+	TiempoTranscurrido = 0.0f; //tiempo transcurrido
 
 }
 
@@ -24,6 +32,19 @@ void ANaveEnemigaCaza::BeginPlay()
 void ANaveEnemigaCaza::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime); 
+	//Disparos
+
+	TiempoTranscurrido++;
+	if (TiempoTranscurrido > 300) {
+		UWorld* const World = GetWorld();
+		if (World != nullptr)
+		{
+			FVector PosicionProyectilEnemigo = GetActorLocation() + FVector(0.0f, 0.0f, 0.0f); //posicion del proyectil enemigo
+			World->SpawnActor <AProyectilEnemigo>(PosicionProyectilEnemigo, FRotator::ZeroRotator); //spawneo proyectil
+		}
+		TiempoTranscurrido = 0;
+
+	}
 }
 
 
