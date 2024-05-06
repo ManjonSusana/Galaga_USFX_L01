@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Definitions.Galaga_USFX_L01.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaFactory.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemiga.h
@@ -5,3 +6,10 @@ C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L0
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\ComponenteMovimiento.generated.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemiga.generated.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaFactory.generated.h
+=======
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Definitions.Galaga_USFX_L01.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaFactory.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemiga.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemiga.generated.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Inc\Galaga_USFX_L01\NaveEnemigaFactory.generated.h
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097

@@ -5,7 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerInput.h"
 #include "Barrera.h"
+<<<<<<< HEAD
 #include "ComponenteBarrera.h"	
+=======
+#include "ComponenteBarrera.h"
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/Character.h"
@@ -13,13 +17,28 @@
 #include "CapsulasMotor.h"
 #include "CapsulaArma.h"
 #include "Galaga_USFX_L01Pawn.generated.h"
-
 UCLASS(Blueprintable)
 class AGalaga_USFX_L01Pawn : public APawn
 {
 	GENERATED_BODY()
+<<<<<<< HEAD
 	
 
+=======
+
+private:
+	int score;
+	float vida;
+	
+
+public:
+	FORCEINLINE int GetScore() const { return score; }
+	FORCEINLINE float GetVida() const { return vida; }
+
+	FORCEINLINE void SetScore(int _score) { score = _score; }
+	FORCEINLINE void SetVida(float _vida) { vida = _vida; }
+
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 	/* The mesh component */
 	UPROPERTY(Category = Mesh, VisibleDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class UStaticMeshComponent* ShipMeshComponent;
@@ -31,7 +50,6 @@ class AGalaga_USFX_L01Pawn : public APawn
 	/** Camera boom positioning the camera above the character */
 	UPROPERTY(Category = Camera, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	class USpringArmComponent* CameraBoom;
-
 
 
 public:
@@ -54,11 +72,21 @@ public:
 	UPROPERTY(Category = Audio, EditAnywhere, BlueprintReadWrite)
 	class USoundBase* FireSound;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 	void crearBarrera();
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* ComponenteBarrera; //Componente de la barrera
 	ABarrera* barrera; //Barrera
+<<<<<<< HEAD
+=======
+	
+
+
+
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 
 	// Begin Actor Interface
 	virtual void Tick(float DeltaSeconds) override;

@@ -24,6 +24,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 	//creando naves con el metodo CrearNave
 
 	static ANaveEnemiga* CrearNave(FString nave, UWorld* World, FVector SpawnLocation, FRotator SpawnRotation);

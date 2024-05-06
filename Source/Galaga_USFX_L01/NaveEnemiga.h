@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "ComponenteMovimiento.h"
 #include "NaveEnemiga.generated.h"
 
 UCLASS(abstract)
@@ -13,11 +12,11 @@ class GALAGA_USFX_L01_API ANaveEnemiga : public AActor
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true")) //
 	UStaticMeshComponent* mallaNaveEnemiga;   //malla 
 
 protected:
-	
+	float velocidad;    //VELOCIDAD DE MOVIMIENTO DE LA NAVE
 	float resistencia;    //NUMERO DE DISPAROS QUE RECIBE
 	FString nombre;
 	float danoProducido;   //Potencia de cada proyectil de disparo de nave
@@ -29,16 +28,9 @@ protected:
 	float experiencia;
 	float energia;
 
-	// Declaración del componente de movimiento de naves
-	UComponenteMovimiento* MovimientoNavesComponent;
+	float LimiteInferiorX; // Limites de movimiento de las naves
+	float LimiteInferiorY; // Limites de movimiento de las naves
 	
-
-public:
-	float velocidad;
-
-
-
-
 public:
 
 	FORCEINLINE float GetVelocidad() const { return velocidad; }
@@ -67,12 +59,6 @@ public:
 	FORCEINLINE void SetExperiencia(float _experiencia) { experiencia = _experiencia; }
 	FORCEINLINE void SetEnergia(float _energia) { energia = _energia; }
 
-
-
-
-
-
-
 public:
 	// Sets default values for this actor's properties
 	ANaveEnemiga();
@@ -88,8 +74,10 @@ public:
 
 protected:  //creacion clase abstracta 
 	//virtual void Mover() = 0: 
+	//metodos para implementar en las clases hijas
 	void Mover(float DeltaTime) PURE_VIRTUAL(ANaveEnemiga::Mover, );
 	void Disparar() PURE_VIRTUAL(ANaveEnemiga::Disparar, );
-	void Atacar() PURE_VIRTUAL(ANaveEnemiga::Atacar, );
 	void Escapar() PURE_VIRTUAL(ANaveEnemiga::Escapar, );
+	void Desplazamiento() PURE_VIRTUAL(ANaveEnemiga::Desplazamiento, ); //
+	//void Desplazamiento() PURE_VIRTUAL(ANaveEnemiga::Desplazamiento, );
 };

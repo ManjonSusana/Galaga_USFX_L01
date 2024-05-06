@@ -1,9 +1,9 @@
 #include "Galaga_USFX_L01GameMode.h"
 #include "Galaga_USFX_L01Pawn.h"
-#include "ComponenteMovimiento.h"
 #include "NaveEnemiga.h"
 #include "NaveEnemigaTransporte.h"
 #include "NaveEnemigaCaza.h"
+<<<<<<< HEAD
 #include "NaveEnemigaBicho.h"
 #include "NaveEnemigaAbeja.h"
 #include "NaveEnemigaMariposa.h"
@@ -31,6 +31,10 @@
 #include "CapsulasMotor.h"
 #include "CapsulaArma.h"
 
+=======
+#include "NaveEnemigaCazaFactory.h"
+#include "NaveEnemigaTransporteFactory.h"
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 
 AGalaga_USFX_L01GameMode::AGalaga_USFX_L01GameMode() {
 
@@ -44,11 +48,12 @@ AGalaga_USFX_L01GameMode::AGalaga_USFX_L01GameMode() {
 void AGalaga_USFX_L01GameMode::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	//tiempo de desaparicion de la nave Enemiga Caza
 	TiempoTranscurrido++;
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 }
 
 void AGalaga_USFX_L01GameMode::BeginPlay() {
@@ -86,6 +91,7 @@ void AGalaga_USFX_L01GameMode::BeginPlay() {
 	*/
 	
 	//Set the game state to playing
+<<<<<<< HEAD
 	//INICIALIZAR EL TMAP
 	//DIMENSIONES DE ARRAYS
 	FVector ubicacionInicioNavesEnemigasCaza = FVector(200.0f, -900.0f, 250.f);
@@ -99,10 +105,20 @@ void AGalaga_USFX_L01GameMode::BeginPlay() {
 	const int32 NumeroDeColumnasCaza = 1; // N° COLUMNAS
 	const int32 NumeroDeFilasCaza = 5;    //  N° FILAS
 
+=======
+	FVector ubicacionInicioNavesEnemigasCaza = FVector(1000.0f, -900.0f, 250.f);
+	FVector ubicacionInicioNavesEnemigasTransporte = FVector(1600.0f, -900.0f, 250.0f);
+	//FRotator rotacionNavesEnemigasCaza = FRotator(0.0f, 90.0f, 0.0f);
+	//FRotator rotacionNavesEnemigasTransporte = FRotator(0.0f, 180.0f, 0.0f);
+	FRotator rotacionNave = FRotator(0.0f, 180.0f, 0.0f);
+
+	// CREANDO NAVES ENEMIGAS 
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 	UWorld* const World = GetWorld();
 	if (World != nullptr)
 	{
 		for (int i = 0; i < 6; i++) {
+<<<<<<< HEAD
 			for (int j = 0; j < 1; j++) {
 				FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasTransporte.X + j * 200, ubicacionInicioNavesEnemigasTransporte.Y + i * 200, ubicacionInicioNavesEnemigasTransporte.Z);
 				ANaveEnemiga* NuevaNaveCaza = ANaveEnemigaCazaFactory::CrearNave("Caza", World, PosicionNaveActual, FRotator::ZeroRotator);
@@ -287,3 +303,22 @@ void AGalaga_USFX_L01GameMode::BeginPlay() {
 	//
 }*/
 
+=======
+			for (int j = 0; j < 2; j++) {
+				FVector PosicionNaveActual = FVector(ubicacionInicioNavesEnemigasTransporte.X + j * 200, ubicacionInicioNavesEnemigasTransporte.Y + i * 300, ubicacionInicioNavesEnemigasTransporte.Z);
+				ANaveEnemiga* NuevaNaveCaza = ANaveEnemigaCazaFactory::CrearNave("Caza", World, PosicionNaveActual, FRotator::ZeroRotator);
+			}
+		}
+
+		float nuevaposicionX = ubicacionInicioNavesEnemigasTransporte.X - 300.0f;
+
+	
+		for (int j = 0; j < 6; j++) {
+			FVector PosicionNaveActual = FVector(nuevaposicionX, ubicacionInicioNavesEnemigasTransporte.Y + j * 300, ubicacionInicioNavesEnemigasTransporte.Z);
+			ANaveEnemiga* NuevaNaveTransporte = ANaveEnemigaTransporteFactory::CrearNave("Transporte", World, PosicionNaveActual, FRotator::ZeroRotator);
+
+		}
+	}
+
+};
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097

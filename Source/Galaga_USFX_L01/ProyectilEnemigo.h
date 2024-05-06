@@ -12,10 +12,15 @@ class GALAGA_USFX_L01_API AProyectilEnemigo : public AActor
 	GENERATED_BODY()
 
 private:
+<<<<<<< HEAD
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* ProyectilEnemyMesh;
 
+=======
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Projectile, meta = (AllowPrivateAccess = "true"))
+	UStaticMeshComponent* ProyectilEnemyMesh;
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 	int dano;                 //Dano que hace el proyectil a la nave
 	float velocidad;		  //Velocidad del proyectil enemigo
 	float direccion;		  //Direccion del proyectil enemigo
@@ -32,10 +37,14 @@ public:
 	void MovimientoProyectil();  //Metodo para mover el proyectil enemigo
 	void Impacto();			  //Metodo para detectar el impacto del proyectil enemigo
 	void ProyectilEnemigo();	  //Constructor de la clase
+<<<<<<< HEAD
 	
+=======
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 public:	
 	// Sets default values for this actor's properties
-	AProyectilEnemigo();
+	AProyectilEnemigo(); //Constructor de la clase
+
 
 
 protected:

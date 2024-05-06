@@ -25,9 +25,18 @@ void ANaveEnemigaFactory::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+<<<<<<< HEAD
 
 ANaveEnemiga* ANaveEnemigaFactory::CrearNave(FString nave, UWorld* World, FVector SpawnLocation, FRotator SpawnRotation)
 {
 	return nullptr;
+=======
+ANaveEnemiga* ANaveEnemigaFactory::CrearNave(FString nave, UWorld* World, FVector SpawnLocation, FRotator SpawnRotation)
+{
+	return nullptr;
+	/*ANaveEnemiga* Enemiga = CrearNave(nave, World, SpawnLocation, SpawnRotation);
+	return Enemiga;*/
+
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 }
 

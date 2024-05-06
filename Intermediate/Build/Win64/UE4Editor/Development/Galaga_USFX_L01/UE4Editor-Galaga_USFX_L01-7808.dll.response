@@ -33,6 +33,7 @@
 /NODEFAULTLIB:"LIBCD"
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN
+<<<<<<< HEAD:Intermediate/Build/Win64/UE4Editor/Development/Galaga_USFX_L01/UE4Editor-Galaga_USFX_L01-7808.dll.response
 "C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\Galaga_USFX_L01Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 "C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\ArmaNave.cpp.obj"
 "C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Barrera.cpp.obj"
@@ -86,6 +87,36 @@
 "C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\VidaNave.gen.cpp.obj"
 "C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Module.Galaga_USFX_L01.gen.cpp.obj"
 "C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Default.rc2.res"
+=======
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\Galaga_USFX_L01Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Barrera.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\ComponenteBarrera.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Galaga_USFX_L01.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Galaga_USFX_L01GameMode.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Galaga_USFX_L01Pawn.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Galaga_USFX_L01Projectile.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemiga.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaCaza.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaCazaFactory.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaFactory.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaTransporte.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaTransporteFactory.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\ProyectilEnemigo.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Barrera.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\ComponenteBarrera.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Galaga_USFX_L01.init.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Galaga_USFX_L01GameMode.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Galaga_USFX_L01Pawn.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Galaga_USFX_L01Projectile.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemiga.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaCaza.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaCazaFactory.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaFactory.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaTransporte.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\NaveEnemigaTransporteFactory.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\ProyectilEnemigo.gen.cpp.obj"
+"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\Default.rc2.res"
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097:Intermediate/Build/Win64/UE4Editor/Development/Galaga_USFX_L01/UE4Editor-Galaga_USFX_L01-0007.dll.response
 "C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
 "C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
 "C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
@@ -114,7 +145,13 @@
 "setupapi.lib"
 "dwmapi.lib"
 "imm32.lib"
+<<<<<<< HEAD:Intermediate/Build/Win64/UE4Editor/Development/Galaga_USFX_L01/UE4Editor-Galaga_USFX_L01-7808.dll.response
 /OUT:"C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Binaries\Win64\UE4Editor-Galaga_USFX_L01-7808.dll"
 /IMPLIB:"C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\UE4Editor-Galaga_USFX_L01-7808.suppressed.lib"
 /PDB:"C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Binaries\Win64\UE4Editor-Galaga_USFX_L01-7808.pdb"
+=======
+/OUT:"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Binaries\Win64\UE4Editor-Galaga_USFX_L01-0007.dll"
+/IMPLIB:"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Intermediate\Build\Win64\UE4Editor\Development\Galaga_USFX_L01\UE4Editor-Galaga_USFX_L01-0007.suppressed.lib"
+/PDB:"C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Binaries\Win64\UE4Editor-Galaga_USFX_L01-0007.pdb"
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097:Intermediate/Build/Win64/UE4Editor/Development/Galaga_USFX_L01/UE4Editor-Galaga_USFX_L01-0007.dll.response
 /ignore:4078

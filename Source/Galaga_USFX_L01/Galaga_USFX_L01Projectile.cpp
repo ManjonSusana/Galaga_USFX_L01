@@ -35,10 +35,11 @@ AGalaga_USFX_L01Projectile::AGalaga_USFX_L01Projectile()
 
 void AGalaga_USFX_L01Projectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
+	//hace que el proyectil se destruya al colisionar con algo
 	// Only add impulse and destroy projectile if we hit a physics
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())
 	{
-		OtherComp->AddImpulseAtLocation(GetVelocity() * 20.0f, GetActorLocation());
+		OtherComp->AddImpulseAtLocation(GetVelocity() * 20.0f, GetActorLocation()); //hace que el objeto que colisiona con el proyectil se mueva
 	}
 
 	Destroy();

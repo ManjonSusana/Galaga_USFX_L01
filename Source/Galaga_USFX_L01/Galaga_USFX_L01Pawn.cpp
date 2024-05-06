@@ -70,12 +70,18 @@ void AGalaga_USFX_L01Pawn::SetupPlayerInputComponent(class UInputComponent* Play
 	PlayerInputComponent->BindAxis(FireRightBinding);
 
 	//CON LA TECLA INICIAR LA BARRERA
+<<<<<<< HEAD
 	FInputActionKeyMapping crearBarrera("crearBarrera", EKeys::K, 0, 0, 0, 0);
 	UPlayerInput::AddEngineDefinedActionMapping(crearBarrera);
+=======
+	FInputActionKeyMapping crearBarrera("crearBarrera", EKeys::K, 0, 0, 0,0);
+	UPlayerInput:: AddEngineDefinedActionMapping(crearBarrera);
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 
 	PlayerInputComponent->BindAction("crearBarrera", IE_Pressed, this, &AGalaga_USFX_L01Pawn::crearBarrera);
 
 
+<<<<<<< HEAD
 	//Asignar la funcion Regresar
 	FInputActionKeyMapping Regresar("Regresar", EKeys:: B, 0,0,0,0);
 	UPlayerInput::AddEngineDefinedActionMapping(Regresar);
@@ -91,6 +97,17 @@ void AGalaga_USFX_L01Pawn::crearBarrera()
 
 	//Creamos la barrera en la posicion del componente
 	UComponenteBarrera* crearBarrera = GetWorld()->SpawnActor<UComponenteBarrera>(UComponenteBarrera::StaticClass(), Location, Rotation);
+=======
+}
+
+void AGalaga_USFX_L01Pawn::crearBarrera()
+{
+	FVector Location = GetActorLocation() + FVector(250.0f, 0.0f, 0.0f);
+	FRotator Rotation = FRotator(0.0f, 0.0f, 0.0f);
+
+	//Creamos la barrera en la posicion del componente
+	UComponenteBarrera* crearBarrera = GetWorld()->SpawnActor<UComponenteBarrera>(UComponenteBarrera::StaticClass(), Location, Rotation); 
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 	if (crearBarrera != nullptr) {
 		crearBarrera->SetWorldLocation(Location);
 		crearBarrera->SetWorldRotation(Rotation);
@@ -100,6 +117,20 @@ void AGalaga_USFX_L01Pawn::crearBarrera()
 		crearBarreraSpawn->SetActorLocation(Location);
 		crearBarreraSpawn->SetActorRotation(Rotation);
 
+<<<<<<< HEAD
+=======
+		//FTimerDelegate TimerDel; //
+		//TimerDel.BindLambda([crearBarreraSpawn]()
+		//	{
+		//		if (crearBarrera && crearBarreraSpawn->IsValidLowLevel())
+		//		{
+		//			//crearBarrera->Destroy();
+
+		//		}
+		//	});
+
+		//GetWorld()->GetTimerManager().SetTimer(DestruirBarrera, TimerDel, 3.0f, false);
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 
 	}
 }
@@ -174,7 +205,7 @@ void AGalaga_USFX_L01Pawn::FireShot(FVector FireDirection)
 	}
 }
 
-void AGalaga_USFX_L01Pawn::ShotTimerExpired()
+void AGalaga_USFX_L01Pawn::ShotTimerExpired() 
 {
 	bCanFire = true;
 }

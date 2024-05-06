@@ -9,17 +9,24 @@ ANaveEnemiga::ANaveEnemiga()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	//static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cone.Shape_Cone'"));
 	// Create the mesh component
 	mallaNaveEnemiga = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	//mallaNaveEnemigaMesh->SetStaticMesh(ShipMesh.Object);
 	mallaNaveEnemiga->SetupAttachment(RootComponent);
 	RootComponent = mallaNaveEnemiga;
-	velocidad = 1;
+	velocidad = 0.25;
+
+	LimiteInferiorX = -500.0f;
 
 	// Inicializa el componente de movimiento de naves
-	MovimientoNavesComponent = CreateDefaultSubobject<UComponenteMovimiento>(TEXT("MovimientoNavesComponent"));
+	//MovimientoNavesComponent = CreateDefaultSubobject<UComponenteMovimiento>(TEXT("MovimientoNavesComponent"));
 
+<<<<<<< HEAD
+=======
+	// Establece el componente de movimiento como tickeable
+	//MovimientoNavesComponent->PrimaryComponentTick.bCanEverTick = true;
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 
 }
 
@@ -34,8 +41,11 @@ void ANaveEnemiga::BeginPlay()
 void ANaveEnemiga::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 }
 
 

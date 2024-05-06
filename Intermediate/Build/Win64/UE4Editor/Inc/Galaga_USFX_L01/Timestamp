@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\ArmaNave.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\CapsulaArma.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\Barrera.h
@@ -42,3 +43,17 @@ C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L0
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\ComponenteBarrera.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\CapsulasMotor.h
 C:\Users\manjo\Desktop\Galaga_USFX_LAB01\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\ComponenteInventario.h
+=======
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\Barrera.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemiga.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\Galaga_USFX_L01Projectile.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaCaza.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaTransporte.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaTransporteFactory.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\ProyectilEnemigo.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaCazaFactory.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\ComponenteBarrera.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\Galaga_USFX_L01Pawn.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\Galaga_USFX_L01GameMode.h
+C:\Users\manjo\Desktop\Galaga_USFX_LAB01 - copia (6) - copia\Galaga_USFX_LAB01\Source\Galaga_USFX_L01\NaveEnemigaFactory.h
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097

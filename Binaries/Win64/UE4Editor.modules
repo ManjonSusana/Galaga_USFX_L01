@@ -2,6 +2,10 @@
 	"BuildId": "17155196",
 	"Modules": 
 	{
+<<<<<<< HEAD
 		"Galaga_USFX_L01": "UE4Editor-Galaga_USFX_L01-7808.dll"
+=======
+		"Galaga_USFX_L01": "UE4Editor-Galaga_USFX_L01-0020.dll"
+>>>>>>> f0bb4bf00fa9a004cf21cec808d61b923c834097
 	}
 }
